@@ -80,6 +80,88 @@ http://tracker.pipservices.net:8080/api/v1/sites
 
 ---
 
+## Get all sites
+
+# GET /sites
+
+Returns json array with data about all existing sites. Allowed only for system administators.
+
+# Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/all
+`
+
+# Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+
+# Example Request
+
+`
+ GET http://tracker.pipservices.net:8080/api/v1/sites/all
+`
+
+# Example Responce
+
+```
+{
+	"total": 73,
+	"data": [
+	{
+		"center": {
+			"type": "Point",
+			"coordinates": [],
+		},
+		"name": "Новая площадка для 1@1.com",
+		"create_time": "2017-08-11T14:53:44.726Z",
+		"active": true,
+		"version": 10,
+		"code": "11COM97",
+		"active_int": 60,
+		"inactive_int": 300,
+		"offsite_int": 900,
+		"offline_timeout": 900,
+		"radius": 10,
+		"geometry": {...},
+		"boundaries": {...},
+		"id": "964fe4e7b3034e48b47053a9431d215c"
+	},
+	{
+		"center": {
+			"type": "Point",
+			"coordinates": [],
+		},
+		"name": "erfdr4ed",
+		"language": "ru",
+		"create_time": "2017-09-18T12:37:46.067Z",
+		"active": true,
+		"version": 122,
+		"code": "ERFDR66",
+		"active_int": 60,
+		"inactive_int": 300,
+		"offsite_int": 900,
+		"offline_timeout": 900,
+		"radius": 10,
+		"geometry": {...},
+		"boundaries": {...},
+		"id": "9797346dc74f4f048b713d60bb433850"
+	},
+	...
+}
+```
+
+---
+
 ## Get site info
 
 # GET /sites/:site_id

@@ -32,7 +32,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states
 # Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/current_object_states
+ GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states
 `
 
 # Example Responce
@@ -208,7 +208,6 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones/:zone_id
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-
 | device_id | No | Device ids can be retrieved from */sites/:site_id/devices* | | ff65253d71fc4e278d9e89013095c927 |
 | object_id | No | Object ids can be retrieved from */sites/:site_id/control_objects/* | | e17172ad05d448d18450aca6f6fff653 |
 | time | Object state time. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T13:13:53.263Z | 
