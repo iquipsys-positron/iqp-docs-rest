@@ -1,0 +1,28 @@
+# Welcome to the iQuipsys Positron Tracker rest documentation.
+
+* [Beacons](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Beacons.md)
+* [ControlObects](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/ControlObects.md)
+* [Devices](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Devices.md)
+* [EmergencyPlans](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/EmergencyPlans.md)
+* [EventTemplates](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/EventTemplates.md)
+* [Gateways](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Gateways.md)
+* [Invitations](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Invitations.md)
+* [Locations](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Locations.md)
+* [ObjectGroups](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/ObjectGroups.md)
+* [Resolutions](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Resolutions.md)
+* [Rules](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Rules.md)
+* [Shifts](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Shifts.md)
+* [SiteRoles](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/SiteRoles.md)
+* [Sites](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Sites.md)
+* [Zones](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Zones.md)
+
+* [Attendance](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/Attendance.md)
+* [ObjectPositions](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/ObjectPositions.md)
+* [ObjectStates](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/ObjectStates.md)
+* [OperationalEvents](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/OperationalEvents.md)
+* [Statistics](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/Statistics.md)
+
+* [Corrections](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/realtime/Corrections.md)
+* [CurrentObjectStates](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/realtime/CurrentObjectStates.md)
+* [Incidents](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/realtime/Incidents.md)
+* [Rosters](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/realtime/Rosters.md)
