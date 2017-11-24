@@ -1,16 +1,14 @@
-## Get site shifts
-
 # GET /sites/:site_id/shifts
 
 Returns json array with data about all shifts on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -23,19 +21,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -66,21 +68,31 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 }
 ```
 
----
+### Response explanation
 
-## Get shift info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| duration | Shift duration in munutes from shift start |
+| site_id |  Shift site id. These IDs can be retrieved from */sites.* |
+| name | Name of the shift |
+| start | Shift start time in minutes from 00:00. For example 8:00 equals 480 |
+| id | Inuque identifier of the shift |
+
+---
 
 # GET /sites/:site_id/shifts/:shift_id
 
 Returns json data about one or all shifts on specified site. If you don't set *shift_id* result will contain all site shifts. To get info only about one shift you should set *shift_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -92,20 +104,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | shift_id | No | shift ids can be retrieved from */sites/:site_id/shifts/* Set shift id to get data for one shift. | | 4169f50cea904a43b46db8c41f0283d9 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/4169f50cea904a43b46db8c41f0283d9
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -117,21 +133,31 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 }
 ```
 
----
+### Response explanation
 
-## Create shift
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| duration | Shift duration in munutes from shift start |
+| site_id |  Shift site id. These IDs can be retrieved from */sites.* |
+| name | Name of the shift |
+| start | Shift start time in minutes from 00:00. For example 8:00 equals 480 |
+| id | Inuque identifier of the shift |
+
+---
 
 # POST /sites/:site_id/shifts
 
-Creates new shift from json string for specified site. 
+Create new shift from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -148,24 +174,28 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | name | Yes | Name of the shift | | First shift |
 | start | Yes | Shift start time in minutes from 00:00. For example 8:00 equals 480 | | 480 |
 | duration | Yes | Shift duration in munutes from shift start | | 480 |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -176,7 +206,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -188,21 +218,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
 }
 ```
 
----
+### Response explanation
 
-## Edit shift
+The result is json data of the new created object.
+
+---
 
 # PUT /sites/:site_id/shifts/:shift_id
 
 Edit existing shift.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -219,25 +251,29 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | name | Yes | Name of the shift | | First shift |
 | start | Yes | Shift start time in minutes from 00:00. For example 8:00 equals 480 | | 480 |
 | duration | Yes | Shift duration in munutes from shift start | | 480 |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| shift_id | No | shift ids can be retrieved from */sites/:site_id/shifts/* Set shift id to get data for one shift. | | de9084d0994d4483a78213de0753baa4 |
+| site_id | Yes | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| shift_id | No | shift ids can be retrieved from */sites/:site_id/shifts/* | | de9084d0994d4483a78213de0753baa4 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/de9084d0994d4483a78213de0753baa4
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -246,7 +282,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -258,21 +294,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 }
 ```
 
----
+### Response explanation
 
-## Delete shift
+The result is json data of the edited object.
+
+---
 
 # DELETE /sites/:site_id/shifts/:shift_id
 
 Deletes existing shift.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -284,20 +322,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| shift_id | No | shift ids can be retrieved from */sites/:site_id/shifts/* Set shift id to get data for one shift. | | de9084d0994d4483a78213de0753baa4 |
+| site_id | Yes | Shift site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| shift_id | No | shift ids can be retrieved from */sites/:site_id/shifts/* | | de9084d0994d4483a78213de0753baa4 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/de9084d0994d4483a78213de0753baa4
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -309,3 +351,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
 	"id": "de9084d0994d4483a78213de0753baa4"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted object.

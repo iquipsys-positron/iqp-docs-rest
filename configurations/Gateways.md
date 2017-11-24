@@ -1,16 +1,14 @@
-## Get site gateways
-
 # GET /sites/:site_id/gateways
 
 Returns json array with data about all gateways on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -23,19 +21,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -62,21 +64,33 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 }
 ```
 
----
+### Response explanation
 
-## Get gateway info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Gateway site id. These IDs can be retrieved from */sites.* |
+| label | Human readable label for gateway |
+| model | Model of the gateway. Can take next values **multiconnect conduit** or **unknown** |
+| udi | Gateway MAC address |
+| create_time | Time of the gateway creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| active | Variable to store is gateway active |
+| id | Inuque identifier of the gateway |
+
+---
 
 # GET /sites/:site_id/gateways/:gateway_id
 
 Returns json data about one or all gateways on specified site. If you don't set *gateway_id* result will contain all site gateways. To get info only about one gateway you should set *gateway_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -89,20 +103,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | gateway_id | No | Gateway ids can be retrieved from */sites/:site_id/gateways/* Set gateway id to get data for one gateway. | | 3a7e8b7ad1074f50a8bcf04073b4e39f |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -117,21 +135,36 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 }
 ```
 
+### Response explanation
+
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Gateway site id. These IDs can be retrieved from */sites.* |
+| label | Human readable label for gateway |
+| model | Model of the gateway. Can take next values **multiconnect conduit** or **unknown** |
+| udi | Gateway MAC address |
+| create_time | Time of the gateway creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| active | Variable to store is gateway active |
+| id | Inuque identifier of the gateway |
+
+
 ---
 
-## Create gateway
+# Create gateway
 
-# POST /sites/:site_id/gateways
+### POST /sites/:site_id/gateways
 
 Creates new gateway from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -148,24 +181,29 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | udi | Yes | Gateway MAC address | | 1F52GH86F9A8 |
+| model | Model of the gateway. Can take next values **multiconnect conduit** or **unknown** |
 | label | No | Human readable label for gateway | | gateway01 |
 | active | No | Variable to store is gateway active | true | true, false |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -176,7 +214,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -190,21 +228,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
 }
 ```
 
----
+### Response explanation
 
-## Get gateway id by gateway udi
+The result is json data of new created object.
+
+---
 
 # POST /sites/:site_id/gateways/validate_udi
 
 Return gateway id for setted udi in request body. If gateway not found returns empty string.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/validate_udi
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -223,13 +263,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/validate_udi
 |------|----------|-------------|---------------|---------|
 | udi | Yes | Unique gateway identifier | | 001, abc, a1b2c3 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/validate_udi
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -237,27 +281,29 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/validate_udi
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 "aafa6bfefd674529a33eaf9da7e54c61"
 ```
 
----
+### Response explanation
 
-## Edit gateway
+The result is an id of finded gateway by udi.
+
+---
 
 # PUT /sites/:site_id/gateways/:gateway_id
 
 Edit existing gateway.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -274,25 +320,29 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | udi | Yes | Gateway MAC address | | 1F52GH86F9A8 |
 | label | No | Human readable label for gateway | | gateway01 |
 | active | No | Variable to store is gateway active | true | true, false |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | gateway_id | No | Gateway ids can be retrieved from */sites/:site_id/gateways/* | | 3a7e8b7ad1074f50a8bcf04073b4e39f |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/aafa6bfefd674529a33eaf9da7e54c61
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -303,7 +353,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -317,21 +367,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 }
 ```
 
----
+### Response explanation
 
-## Delete gateway
+The result is edited object json data.
+
+---
 
 # DELETE /sites/:site_id/gateways/:gateway_id
 
 Deletes existing gateway.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -343,20 +395,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Gateway site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | gateway_id | No | Gateway ids can be retrieved from */sites/:site_id/gateways/* | | 3a7e8b7ad1074f50a8bcf04073b4e39f |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/aafa6bfefd674529a33eaf9da7e54c61
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -370,23 +426,25 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
 }
 ```
 
+### Response explanation
+
+The result is deleted object json data.
+
 ---
 
-## TO DO : ping gateway
-
-## Ping gateway
+# TO DO : ping gateway
 
 # POST /sites/:site_id/gateways/:gateway_id/ping
 
 Ping existing gateway.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/ping
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -404,35 +462,41 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/p
 |------|----------|-------------|---------------|---------|
 | | | | | |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f/ping
 `
 
-# Example Responce
+### Example response
 
 ```
 
 ```
+
+### Response explanation
+
+The result is data about ping gateway.
 
 ---
 
-## TO DO : request_stats gateway
-
-## Get gateway statistics
+# TO DO : request_stats gateway
 
 # POST /sites/:site_id/gateways/:gateway_id/request_stats
 
 Returns gateways statistics information.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/request_stats
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -450,14 +514,22 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/r
 |------|----------|-------------|---------------|---------|
 | | | | | |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f/request_stats
 `
 
-# Example Responce
+### Example response
 
 ```
 
 ```
+
+### Response explanation
+
+The result is data about gateway statistics

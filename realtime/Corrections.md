@@ -1,16 +1,14 @@
-## Get site corrections
-
 # GET /sites/:site_id/corrections
 
 Returns json array with data about all corrections on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -23,19 +21,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Correction site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -105,21 +107,35 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 }
 ```
 
----
+### Response explanation
 
-## Get correction info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| time | Time of the creation manual correction Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| object_id | Id of the related with correction object. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| site_id | Correction site id. These IDs can be retrieved from */sites.* |
+| status | Status of the manual correction can take three values - *requested* for new corrections, *rejected*  for rejected correction and *approved* for approved corrections |
+| create_time | Time of the correction creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| close_time | Time when correctiom was closed. If it isn't closed - value us null. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| changes |  Array of objects with fields *value* and *param_name*. *param_name* can take next values: *distance*, *online*, *emergency*, *immobile*. If changes related to rule or zone instead of *param_name* there is prorety *rule_id* or *zone_id*. |
+| affected_id | Array of affected object ids. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| id |  Inuque identifier of the correction |
+
+---
 
 # GET /sites/:site_id/corrections/:correction_id
 
 Returns json data about one or all correction on specified site. If you don't set *correction_id* result will contain all site corrections. To get info only about one correction you should set *correction_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correction_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -132,20 +148,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correctio
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Correction site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | correction_id | No | correction ids can be retrieved from */sites/:site_id/corrections* Set correction id to get data for one correction. | | 74e99f9a2b224c9a9c0f8303150bed19 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/74e99f9a2b224c9a9c0f8303150bed19
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -166,21 +186,35 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correctio
 }
 ```
 
----
+### Response explanation
 
-## Create correction
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| time | Time of the creation manual correction Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| object_id | Id of the related with correction object. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| site_id | Correction site id. These IDs can be retrieved from */sites.* |
+| status | Status of the manual correction can take three values - *requested* for new corrections, *rejected*  for rejected correction and *approved* for approved corrections |
+| create_time | Time of the correction creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| close_time | Time when correctiom was closed. If it isn't closed - value us null. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| changes |  Array of objects with fields *value* and *param_name*. *param_name* can take next values: *distance*, *online*, *emergency*, *immobile*. If changes related to rule or zone instead of *param_name* there is prorety *rule_id* or *zone_id*. |
+| affected_id | Array of affected object ids. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| id |  Inuque identifier of the correction |
+
+---
 
 # POST /sites/:site_id/corrections
 
 Creates new correction from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -197,19 +231,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Correction site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | time | Yes | Time of the creation manual correction Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:13:00.000Z | 
 | object_id | Yes | Id of the related with correction object. Object ids can be retrieved from */sites/:site_id/control_objects/* | | e17172ad05d448d18450aca6f6fff653 |
 | status | Yes | Status of the manual correction can take three values - *requested* for new corrections, *rejected*  for rejected correction and *approved* for approved corrections. | | requested |
 | changes | Yes | Array of objects with fields *value* and *param_name*. *param_name* can take next values: *distance*, *online*, *emergency*, *immobile*. If changes related to rule or zone instead of *param_name* there is prorety *rule_id* or *zone_id*. | | { "value": 60, "param_name": "online" } |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -226,7 +264,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -247,21 +285,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
 }
 ```
 
----
+### Response explanation
 
-## Edit correction
+The result is json data of the new created correction.
+
+---
 
 # PUT /sites/:site_id/corrections/:correction_id
 
 Edit existing correction.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correction_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -278,26 +318,30 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correctio
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Correction site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | time | Yes | Time of the creation manual correction Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:13:00.000Z | 
 | object_id | Yes | Id of the related with correction object. Object ids can be retrieved from */sites/:site_id/control_objects/* | | e17172ad05d448d18450aca6f6fff653 |
 | status | Yes | Status of the manual correction can take three values - *requested* for new corrections, *rejected*  for rejected correction and *approved* for approved corrections. | | requested |
 | changes | Yes | Array of objects with fields *value* and *param_name*. *param_name* can take next values: *distance*, *online*, *emergency*, *immobile*. If changes related to rule or zone instead of *param_name* there is prorety *rule_id* or *zone_id*. | | { "value": 60, "param_name": "online" } |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Correction site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | correction_id | No | correction ids can be retrieved from */sites/:site_id/corrections* | | a3a6c6c4339045689ebd6fac9bc4cea1 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
 PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/a3a6c6c4339045689ebd6fac9bc4cea1
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -312,7 +356,7 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -333,21 +377,23 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
----
+### Response explanation
 
-## Delete correction
+The result is json data of the edited correction.
+
+---
 
 # DELETE /sites/:site_id/corrections/:correction_id
 
 Deletes existing correction.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correction_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -359,20 +405,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correctio
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Correction site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | correction_id | No | correction ids can be retrieved from */sites/:site_id/corrections* | | a3a6c6c4339045689ebd6fac9bc4cea1 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/a3a6c6c4339045689ebd6fac9bc4cea1
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -392,3 +442,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correctio
 	"id": "a3a6c6c4339045689ebd6fac9bc4cea1"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted correction.

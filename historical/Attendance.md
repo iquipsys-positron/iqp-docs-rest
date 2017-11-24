@@ -1,16 +1,14 @@
-## Get all site attendances
-
 # GET /sites/:site_id/attendance
 
 Returns json data about worksite all attendances.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,20 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -77,21 +78,30 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 }
 ```
 
----
+### Response explanation
 
-## Get all within time site attendances 
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Site id. These IDs can be retrieved from */sites.*|
+| start_time | Attendances stored in a day interval. This variable stores date time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| end_time|  Attendances stored in a day interval. This variable stores date time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| objects | Array of the objects with following structire: *start_time* - attendance start time, *end_time* - attendance end time, *object_id* - object related with attendance. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+
+---
 
 # GET /sites/:site_id/attendance/within_time
 
 Returns json data about worksite within time attendances.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/within_time
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -103,20 +113,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/within_time
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance/within_time
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -127,21 +140,30 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/within_time
 }
 ```
 
----
+### Response explanation
 
-## Create attendance
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Site id. These IDs can be retrieved from */sites.*|
+| start_time | Attendances stored in a day interval. This variable stores date time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| end_time|  Attendances stored in a day interval. This variable stores date time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| objects | Array of the objects with following structire: *start_time* - attendance start time, *end_time* - attendance end time, *object_id* - object related with attendance. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+
+---
 
 # POST /sites/:site_id/attendance
 
 Create new attendance from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -163,13 +185,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 | end_time | Yes |  Attendances stored in a day interval. This variable stores date time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-22T00:00:00.000Z |
 | objects | Yes | Array of the objects with following structire: *start_time* - attendance start time, *end_time* - attendance end time, *object_id* - object related with attendance. Object ids can be retrieved from */sites/:site_id/control_objects/* | | see example body below |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -196,7 +222,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 No content
@@ -204,19 +230,17 @@ No content
 
 ---
 
-## Create multiple attendances
-
 # POST /sites/:site_id/attendance/batch
 
 Batch insert for attendances from json string for specified site. Create multple attendances at one request for sended array of attendances.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/batch
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -238,13 +262,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/batch
 | end_time | Yes |  Attendances stored in a day interval. This variable stores date time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-22T00:00:00.000Z |
 | objects | Yes | Array of the objects with following structire: *start_time* - attendance start time, *end_time* - attendance end time, *object_id* - object related with attendance. Object ids can be retrieved from */sites/:site_id/control_objects/* | | see example body below |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance/batch
 `
 
-# Example Body
+### Example Body
 
 ```
 [
@@ -291,7 +319,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/batch
 ]
 ```
 
-# Example Responce
+### Example response
 
 ```
 No content
@@ -299,19 +327,17 @@ No content
 
 ---
 
-## Delete attendances
-
 # DELETE /sites/:site_id/attendance
 
 Delete all attendances on specified worksite.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -323,19 +349,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
 `
 
-# Example Responce
+### Example response
 
 ```
 No content

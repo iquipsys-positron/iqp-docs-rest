@@ -1,16 +1,14 @@
-## Get site rosters
-
 # GET /sites/:site_id/rosters
 
 Returns json array with data about all rosters on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,20 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Roster site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -80,24 +81,34 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
     },
 	...
 }
-
 ```
 
----
+### Response explanation
 
-## Get roster info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| end_time | Shift end time, if objects added for entire day start_time equals to end day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| name | Shift name, if objects added for entire day- name can be empty  |
+| shift_id | Shift id, if objects added for entire day - shift_id can be empty. Shift ids can be retrieved from */sites/:site_id/shifts* |
+| site_id | Roster site id. These IDs can be retrieved from */sites.* |
+| start_time | Shift start time, if objects added for entire day start_time equals to start day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| objects |  Array of objects included in roster. Each array item have object id, which can be retrieved from */sites/:site_id/control_objects/*. Also to array object can be setted *assign_id*, this is object id of equipment or asset assigned to object. |
+
+---
 
 # GET /sites/:site_id/rosters/:roster_id
 
 Returns json data about one or all roster on specified site. If you don't set *roster_id* result will contain all site rosters. To get info only about one roster you should set *roster_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -110,20 +121,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Roster site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | roster_id | No | roster ids can be retrieved from */sites/:site_id/rosters* Set roster id to get data for one roster. | | 6a613241f5a243a588346d1fc0459a41 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/6a613241f5a243a588346d1fc0459a41
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -145,21 +160,32 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 }
 ```
 
----
+### Response explanation
 
-## Create roster
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| end_time | Shift end time, if objects added for entire day start_time equals to end day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| name | Shift name, if objects added for entire day- name can be empty  |
+| shift_id | Shift id, if objects added for entire day - shift_id can be empty. Shift ids can be retrieved from */sites/:site_id/shifts* |
+| site_id | Roster site id. These IDs can be retrieved from */sites.* |
+| start_time | Shift start time, if objects added for entire day start_time equals to start day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| objects |  Array of objects included in roster. Each array item have object id, which can be retrieved from */sites/:site_id/control_objects/*. Also to array object can be setted *assign_id*, this is object id of equipment or asset assigned to object. |
+
+---
 
 # POST /sites/:site_id/rosters
 
 Creates new roster from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -176,20 +202,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Roster site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | shift_id | No | Shift id, if objects added for entire day, can be empty. Shift ids can be retrieved from */sites/:site_id/shifts* | | d5da284f89c74bc2adea6adb4b799ab0 |
 | name | No | Shift name, if objects added for entire day, can be empty | | First shift |
 | start_time | Yes | Shift start time, if objects added for entire day start_time equals to start day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T13:13:00.000Z | 
 | end_time | Yes | Shift end time, if objects added for entire day start_time equals to end day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:13:00.000Z | 
 | objects | Yes | Array of objects included in roster. Each array item have object id, which can be retrieved from */sites/:site_id/control_objects/*. Also to array object can be setted *assign_id*, this is object id of equipment or asset assigned to object. | | [ { "object_id": "dfc175a4d12c47fda8684b7a762e91e0" }, ... ] |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -209,7 +239,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -230,21 +260,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
 }
 ```
 
----
+### Response explanation
 
-## Edit roster
+The result is json data of the new created roster.
+
+---
 
 # PUT /sites/:site_id/rosters/:roster_id
 
 Edit existing roster.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -261,27 +293,31 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Roster site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | shift_id | No | Shift id, if objects added for entire day, can be empty. Shift ids can be retrieved from */sites/:site_id/shifts* | | d5da284f89c74bc2adea6adb4b799ab0 |
 | name | No | Shift name, if objects added for entire day, can be empty | | First shift |
 | start_time | Yes | Shift start time, if objects added for entire day start_time equals to start day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T13:13:00.000Z | 
 | end_time | Yes | Shift end time, if objects added for entire day start_time equals to end day. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:13:00.000Z | 
 | objects | Yes | Array of objects included in roster. Each array item have object id, which can be retrieved from */sites/:site_id/control_objects/*. Also to array object can be setted *assign_id*, this is object id of equipment or asset assigned to object. | | [ { "object_id": "dfc175a4d12c47fda8684b7a762e91e0" }, ... ] |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Roster site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | roster_id | No | roster ids can be retrieved from */sites/:site_id/rosters* | | 9f8e68b74cc84afd8ff1cd2c70187de8 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
 PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/9f8e68b74cc84afd8ff1cd2c70187de8
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -294,7 +330,7 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -312,21 +348,22 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
----
+### Response explanation
 
-## Delete roster
+The result is json data of the edited roster.
+---
 
 # DELETE /sites/:site_id/rosters/:roster_id
 
 Deletes existing roster.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -338,20 +375,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Roster site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | roster_id | No | roster ids can be retrieved from */sites/:site_id/rosters* | | 9f8e68b74cc84afd8ff1cd2c70187de8 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/9f8e68b74cc84afd8ff1cd2c70187de8
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -368,3 +409,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
 	"id": "9f8e68b74cc84afd8ff1cd2c70187de8"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted roster.

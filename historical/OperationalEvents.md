@@ -1,16 +1,14 @@
-## Get site operational events
-
 # GET /sites/:site_id/operational_events
 
 Returns json data about all worksite operational events.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,20 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Operational event site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -93,21 +94,42 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 }
 ```
 
----
+### Response explanation
 
-## Create operational event
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Operational event site id. These IDs can be retrieved from */sites.* |
+| create_time |  Time of the event creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| creator_id | If operational event created manualy by manager or administrator this variable stores creator id. Account ids can be retrieved from */accounts*. If operational event created automaticaly by system value is *null* |
+| type | Type of the opartional event displays the way it was created - manualy by site manager or admin or automaticaly by system when rule is triggered. Can take values *manual*, *auto* |
+| rule_id | Defines what rule was triggered for this operational event. Rule ids can be retrieved from */sites/:site_id/rules/* |
+| severity | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. |
+| time | Time of the event creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| pos | Position of the event. It stores in geoJSON point format - object with property *coordinates* with array longtitude latitude pair. |
+| object_id | Object related to event. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| assign_id | Equipment or asset id assigned to object. If object doesn't have assign value is null. These ids can be retrieved from */sites/:site_id/control_objects/* |
+| zone_id | Zone where an event happens. Zone ids can be retrieved from */sites/:site_id/zones/* |
+| description | The event name |
+| expected_value | Parameter value from rule. For example rule is immobility for 15 mins - value will be 15. If not setted can be *null* |
+| actual_value | Actual parameter value. If not setted can be *null* |
+| value_units | Units of the parameter value. If not setted can be *null* |
+| id | Inuque identifier of the operational event |
+
+---
 
 # POST /sites/:site_id/operational_events
 
 Create new operational event from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -124,7 +146,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Operational event site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | creator_id | No | If operational event created manualy by manager or administrator this variable stores creator id. Account ids can be retrieved from */accounts*. If operational event created automaticaly by system value is *null* | null | null, e17172ad05d448d18450aca6f6fff653 |
 | type | Yes | Type of the opartional event displays the way it was created - manualy by site manager or admin or automaticaly by system when rule is triggered | | auto, manual |
 | rule_id | No | Defines what rule was triggered for this operational event. Rule ids can be retrieved from */sites/:site_id/rules/* | | c71278120b9c4e2a8773e1c09503e532 |
@@ -139,14 +161,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 | actual_value | No | Actual parameter value. If not setted can be *null*. | | 15.01 |
 | value_units | No | Units of the parameter value. If not setted can be *null*. | | min | 
 
+### Access security 
 
-# Example Request
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events
 `
 
-# Example Body
+### Example Body
 
 ```
 {		
@@ -173,7 +198,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -202,21 +227,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
 }
 ```
 
----
+### Response explanation
 
-## Delete operational event
+The result is json data of the new created event.
+
+---
 
 # DELETE /sites/:site_id/operational_events/:event_id
 
 Delete all existing current operational event by state id. As result return all deleted states.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events/:event_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -228,20 +255,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events/:ev
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Operational event site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | event_it | No | incident ids can be retrieved from */sites/:site_id/operational_events* | | 5b99a941c17e4b63acda0bb083a4ad09 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events/5b99a941c17e4b63acda0bb083a4ad09
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -269,3 +300,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events/:ev
 	"id": "5b99a941c17e4b63acda0bb083a4ad09"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted event.

@@ -1,16 +1,16 @@
-## Get site emergecy plans
+# Get site emergecy plans
 
-# GET /sites/:site_id/emergency_plans
+### GET /sites/:site_id/emergency_plans
 
 Returns json array with data about all emergecy plans on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,19 +22,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -88,21 +92,40 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 }
 ```
 
----
+### Response explanation
 
-## Get emergecy plan info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Emergency plan site id. These IDs can be retrieved from */sites.* |
+| name | Name of the emergency plan |
+| steps | Objects array of required steps to complite the emergency plan processing with sturcture described below |
+| id | Inuque identifier of the device |
+
+- ### *steps* object structure
+| Name | Description | Examples |
+|------|-------------|----------|
+| index | The step order index | 1 |
+| name | The name of step | Do that |
+| actions | Objects array of step action sequence. Each action have property *type* and *params*. | *Watch example below* |
+| actions.type | Type of action. There are next types: *note* for text, *call phone* for phone, *local link* for link on site, *global_link* external http address. | note |
+| actions.params | Object with value for action. For *type* = **local link** params have two properties - *text* for description and *page* with next values: *ep_action_page_map* for link to monitoring map, *ep_action_page_map_people* for link to monitoring>people, *ep_action_page_map_object* for link to monitoring>objects, *ep_action_page_events* for link to monitoring>events. Other examples you can see below. | *Watch example below* |
+
+
+---
 
 # GET /sites/:site_id/emergency_plans/:plan_id
 
 Returns json data about one or all emergecy plan on specified site. If you don't set *plan_id* result will contain all site emergecy plans. To get info only about one emergecy plan you should set *plan_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -114,20 +137,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | plan_id | No | Emergency plan ids can be retrieved from */sites/:site_id/emergency_plans* Set plan id to get data for one emergecy plan. | | 1026847f61a342cc9068e96ed9c1ea72 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/1026847f61a342cc9068e96ed9c1ea72
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -149,21 +176,39 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 }
 ```
 
----
+### Response explanation
 
-## Create emergecy plan
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Emergency plan site id. These IDs can be retrieved from */sites.* |
+| name | Name of the emergency plan |
+| steps | Objects array of required steps to complite the emergency plan processing with sturcture described below |
+| id | Inuque identifier of the device |
+
+- ### *steps* object structure
+| Name | Description | Examples |
+|------|-------------|----------|
+| index | The step order index | 1 |
+| name | The name of step | Do that |
+| actions | Objects array of step action sequence. Each action have property *type* and *params*. | *Watch example below* |
+| actions.type | Type of action. There are next types: *note* for text, *call phone* for phone, *local link* for link on site, *global_link* external http address. | note |
+| actions.params | Object with value for action. For *type* = **local link** params have two properties - *text* for description and *page* with next values: *ep_action_page_map* for link to monitoring map, *ep_action_page_map_people* for link to monitoring>people, *ep_action_page_map_object* for link to monitoring>objects, *ep_action_page_events* for link to monitoring>events. Other examples you can see below. | *Watch example below* |
+
+---
 
 # POST /sites/:site_id/emergency_plans
 
-Creates new emergecy plan from json string for specified site. 
+Create new emergecy plan from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -180,7 +225,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | name | Yes | Name of the emergecy plan | | Fire, Explosion |
 | steps | No | Objects array of required steps to complite the emergency plan processing | | *Watch example below* |
 
@@ -193,19 +238,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 | actions.type | Type of action. There are next types: *note* for text, *call phone* for phone, *local link* for link on site, *global_link* external http address. | note |
 | actions.params | Object with value for action. For *type* = **local link** params have two properties - *text* for description and *page* with next values: *ep_action_page_map* for link to monitoring map, *ep_action_page_map_people* for link to monitoring>people, *ep_action_page_map_object* for link to monitoring>objects, *ep_action_page_events* for link to monitoring>events. Other examples you can see below. | *Watch example below* |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -252,7 +301,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -300,21 +349,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
 }
 ```
 
----
+### Response explanation
 
-## Edit emergecy plan
+The result is json data of new created object.
+
+---
 
 # PUT /sites/:site_id/emergency_plans/:plan_id
 
 Edit existing emergecy plan.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -331,7 +382,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | name | Yes | Name of the emergecy plan | | Fire, Explosion |
 | steps | No | Objects array of required steps to complite the emergency plan processing | | *Watch example below* |
 
@@ -344,20 +395,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 | actions.type | Type of action. There are next types: *note* for text, *call phone* for phone, *local link* for link on site, *global_link* external http address. | note |
 | actions.params | Object with value for action. For *type* = **local link** params have two properties - *text* for description and *page* with next values: *ep_action_page_map* for link to monitoring map, *ep_action_page_map_people* for link to monitoring>people, *ep_action_page_map_object* for link to monitoring>objects, *ep_action_page_events* for link to monitoring>events. Other examples you can see below. | *Watch example below* |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| plan_id | No | Object ids can be retrieved from */sites/:site_id/emergency_plans* Set object id to get data for one emergecy plan. | | df9cb21c557d4420a7c11d2b91eb070a |
+| site_id | Yes | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| plan_id | No | Object ids can be retrieved from */sites/:site_id/emergency_plans* | | df9cb21c557d4420a7c11d2b91eb070a |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/df9cb21c557d4420a7c11d2b91eb070a
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -398,7 +453,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -441,21 +496,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 }
 ```
 
----
+### Response explanation
 
-## Delete emergecy plan
+The result is json data of the edited object.
+
+---
 
 # DELETE /sites/:site_id/emergency_plans/:plan_id
 
 Deletes existing emergecy plan.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -467,20 +524,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| plan_id | No | Object ids can be retrieved from */sites/:site_id/emergency_plans* Set object id to get data for one emergecy plan. | | df9cb21c557d4420a7c11d2b91eb070a |
+| site_id | Yes | Emergency plan site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| plan_id | No | Object ids can be retrieved from */sites/:site_id/emergency_plans* | | df9cb21c557d4420a7c11d2b91eb070a |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/df9cb21c557d4420a7c11d2b91eb070a
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -522,3 +583,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_
 	"id": "df9cb21c557d4420a7c11d2b91eb070a"
 }
 ```
+
+### Response explanation
+
+The result is data about deleted object.

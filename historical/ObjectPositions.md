@@ -1,16 +1,14 @@
-## Get all site object positions
-
 # GET /sites/:site_id/object_positions
 
 Returns json data about worksite all object positions.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,20 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Object positions site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -77,21 +78,83 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 }
 ```
 
+### Response explanation
+
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| object_id | Object related with position. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| site_id | Object positions site id. These IDs can be retrieved from */sites.* |
+| count | Count of the position for corrent record, in other words this variable stores *positions* array count |
+| end_time | Postitions stored for 15 minutes time interval. This variable stores time of the time interval ending. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| last_time | Postitions stored for 15 minutes time interval. This variable stores time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| positions |  Array of the objects with following structure: *time* - position time, *lat* - position latitude, *long* - position longtitude, *spd* - speed of the object in this position, *agl* - azimuth of the object in this position, stores as integer number, displays object direction  |
+| id | Inuque identifier of the object position |
+
 ---
 
-## Create object position
+# GET /sites/:site_id/object_positions/count
+
+Returns count of all object_positions on worksite.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/count
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| site_id | Yes | Object positions site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
+
+`
+ GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/count
+`
+
+### Example response
+
+```
+328756
+```
+
+### Response explanation
+
+The result quantity of worksite object positions.
+
+---
 
 # POST /sites/:site_id/object_positions
 
 Create new object position from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -108,20 +171,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Object positions site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | object_id | Yes | Object related with position. Object ids can be retrieved from */sites/:site_id/control_objects/* | | e17172ad05d448d18450aca6f6fff653 |
 | count | Yes | Count of the position for corrent record, in other words this variable stores *positions* array count | | 3 |
 | last_time | Yes | Postitions stored for 15 minutes time interval. This variable stores time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:00:00.000Z |
 | end_time | Yes | Postitions stored for 15 minutes time interval. This variable stores time of the time interval ending. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:15:00.000Z |
 | positions | Yes | Array of the objects with following structure: *time* - position time, *lat* - position latitude, *long* - position longtitude, *spd* - speed of the object in this position, *agl* - azimuth of the object in this position, stores as integer number, displays object direction | | [{ "time": "2017-11-23T11:30:00.910Z", "lat": 64.67409168760565, "long": 30.674013118298895, "spd": 5, "agl": 315 }] |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -156,7 +223,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 No content
@@ -164,19 +231,17 @@ No content
 
 ---
 
-## Create multiple object positions
-
 # POST /sites/:site_id/object_positions/batch
 
 Batch insert for object positions from json string for specified site. Create multple object positions at one request for sended array of object positions.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/batch
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -193,20 +258,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/batch
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Object positions site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | object_id | Yes | Object related with position. Object ids can be retrieved from */sites/:site_id/control_objects/* | | e17172ad05d448d18450aca6f6fff653 |
 | count | Yes | Count of the position for corrent record, in other words this variable stores *positions* array count | | 3 |
 | last_time | Yes | Postitions stored for 15 minutes time inetrval. This variable stores time of the time interval begining. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:00:00.000Z |
 | end_time | Yes | Postitions stored for 15 minutes time inetrval. This variable stores time of the time interval ending. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ | | 2017-11-21T18:15:00.000Z |
 | positions | Yes | Array of the objects with following structure: *time* - position time, *lat* - position latitude, *long* - position longtitude, *spd* - speed of the object in this position, *agl* - azimuth of the object in this position, stores as integer number, displays object direction | | [{ "time": "2017-11-23T11:30:00.910Z", "lat": 64.67409168760565, "long": 30.674013118298895, "spd": 5, "agl": 315 }] |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/batch
 `
 
-# Example Body
+### Example Body
 
 ```
 [
@@ -266,7 +335,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/batch
 ]
 ```
 
-# Example Responce
+### Example response
 
 ```
 No content
@@ -274,19 +343,17 @@ No content
 
 ---
 
-## Delete object positions
-
 # DELETE /sites/:site_id/object_positions
 
 Delete all object positions on specified worksite.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -298,19 +365,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Object positions site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
 `
 
-# Example Responce
+### Example response
 
 ```
 No content

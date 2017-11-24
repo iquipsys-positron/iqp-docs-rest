@@ -1,16 +1,14 @@
-## Get site rules
-
 # GET /sites/:site_id/rules
 
 Returns json array with data about all rules on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -23,19 +21,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Rule site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -99,21 +101,44 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 }
 ```
 
----
+### Response explanation
 
-## Get rule info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Rule site id. These IDs can be retrieved from */sites.*|
+| name | Name of the rule |
+| type | Type of the rule. There are next rule types: *max speed*, *min speed*, *entry*, *exit*, *immobility*, *disappear*, *presence*, *online*, *pressed*, *long_pressed* |
+| severity | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. |
+| interval | Interval in seconds between incidents creation for this rule |
+| condition | Object with expected value. For rules type max value condition object have field *max value*, for min speed - *min value*, for immobility/presence - *duration*. Duration stored in seconds. |
+| incident | Variable for indicataion will be created an incident when rule is triggered |
+| show_journal | Variable for indicataion will be an event registeredt when rule is triggered |
+| phones | List of phones for sms delivery when rule is triggered. If you don't want to send sms set variable to null |
+| emails | List of emails for mail delivery when rule is triggered. If you don't want to send emails set variable to null |
+| include_group_ids | Array of groups id, which are included to this rule. These ids can be retrieved from *sites/:site_id/groups*. If it doesn't set rule active for all groups. |
+| exclude_group_ids | Array of groups id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/groups*. |
+| include_zone_ids | Array of zone id, which are included to this rule. These ids can be retrieved from *sites/:site_id/zones*. If it doesn't set rule active for all zones. |
+| exclude_zone_ids | Array of zone id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/zones*. |
+| include_object_ids | Array of object id, which are included to this rule. These ids can be retrieved from *sites/:site_id/control_objects*. If it doesn't set rule active for all objects. |
+| exclude_object_ids | Array of object id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/control_objects*. |
+| create_time | Time of the gateway creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| id | Inuque identifier of the event template |
+
+---
 
 # GET /sites/:site_id/rules/:rule_id
 
 Returns json data about one or all rule on specified site. If you don't set *rule_id* result will contain all site rules. To get info only about one rule you should set *rule_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -126,20 +151,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Rule site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | rule_id | No | rule ids can be retrieved from */sites/:site_id/rules* Set rule id to get data for one rule. | | 5ad48b88358d48fc9c84e90498748a8f |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/5ad48b88358d48fc9c84e90498748a8f
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -170,21 +199,44 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 }
 ```
 
----
+### Response explanation
 
-## Create rule
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Rule site id. These IDs can be retrieved from */sites.*|
+| name | Name of the rule |
+| type | Type of the rule. There are next rule types: *max speed*, *min speed*, *entry*, *exit*, *immobility*, *disappear*, *presence*, *online*, *pressed*, *long_pressed* |
+| severity | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. |
+| interval | Interval in seconds between incidents creation for this rule |
+| condition | Object with expected value. For rules type max value condition object have field *max value*, for min speed - *min value*, for immobility/presence - *duration*. Duration stored in seconds. |
+| incident | Variable for indicataion will be created an incident when rule is triggered |
+| show_journal | Variable for indicataion will be an event registeredt when rule is triggered |
+| phones | List of phones for sms delivery when rule is triggered. If you don't want to send sms set variable to null |
+| emails | List of emails for mail delivery when rule is triggered. If you don't want to send emails set variable to null |
+| include_group_ids | Array of groups id, which are included to this rule. These ids can be retrieved from *sites/:site_id/groups*. If it doesn't set rule active for all groups. |
+| exclude_group_ids | Array of groups id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/groups*. |
+| include_zone_ids | Array of zone id, which are included to this rule. These ids can be retrieved from *sites/:site_id/zones*. If it doesn't set rule active for all zones. |
+| exclude_zone_ids | Array of zone id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/zones*. |
+| include_object_ids | Array of object id, which are included to this rule. These ids can be retrieved from *sites/:site_id/control_objects*. If it doesn't set rule active for all objects. |
+| exclude_object_ids | Array of object id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/control_objects*. |
+| create_time | Time of the gateway creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| id | Inuque identifier of the event template |
+
+---
 
 # POST /sites/:site_id/rules
 
-Creates new rule from json string for specified site. 
+Create new rule from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -201,7 +253,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Rule site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | name | Yes | Name of the rule | | Speed limit 40 km/h, Entry zone |
 | type | Yes | Type of the rule. There are next rule types: *max speed*, *min speed*, *entry*, *exit*, *immobility*, *disappear*, *presence*, *online*, *pressed*, *long_pressed* | | max speed |
 | severity | No | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. | | 0, 50, 100 |
@@ -218,13 +270,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 | include_object_ids | No | Array of object id, which are included to this rule. These ids can be retrieved from *sites/:site_id/control_objects*. If it doesn't set rule active for all objects. | |  ["6470351cad3a46f8b484a92d7dcacce1"] |
 | exclude_object_ids | No | Array of object id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/control_objects*. | |  ["6470351cad3a46f8b484a92d7dcacce1"] |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -247,7 +303,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -276,21 +332,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
 }
 ```
 
----
+### Response explanation
 
-## Edit rule
+The result is json data of the new created object.
+
+---
 
 # PUT /sites/:site_id/rules/:rule_id
 
 Edit existing rule.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -307,7 +365,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Rule site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | name | Yes | Name of the rule | | Speed limit 40 km/h, Entry zone |
 | type | Yes | Type of the rule. There are next rule types: *max speed*, *min speed*, *entry*, *exit*, *immobility*, *disappear*, *presence*, *online*, *pressed*, *long_pressed* | | max speed |
 | severity | No | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. | | 0, 50, 100 |
@@ -324,30 +382,34 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 | include_object_ids | No | Array of object id, which are included to this rule. These ids can be retrieved from *sites/:site_id/control_objects*. If it doesn't set rule active for all objects. | |  ["6470351cad3a46f8b484a92d7dcacce1"] |
 | exclude_object_ids | No | Array of object id, which are excluded from this rule. These ids can be retrieved from *sites/:site_id/control_objects*. | |  ["6470351cad3a46f8b484a92d7dcacce1"] |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| rule_id | No | rule ids can be retrieved from */sites/:site_id/rules* Set rule id to get data for one rule. | | 3b2700490f39472dbc9cdb647936de11 |
+| site_id | Yes | Rule site id. These IDs can be retrieved from */sites.* | | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| rule_id | No | rule ids can be retrieved from */sites/:site_id/rules* | | 3b2700490f39472dbc9cdb647936de11 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
 PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/3b2700490f39472dbc9cdb647936de11
 `
 
-# Example Body
+### Example Body
 
 ```
 {
-  "severity": 100,
-  "name": "New rule1",
-  "show_journal": false
+  	"severity": 100,
+  	"name": "New rule1",
+  	"show_journal": false
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -376,21 +438,23 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
----
+### Response explanation
 
-## Delete rule
+The result is json data of the edited object.
+
+---
 
 # DELETE /sites/:site_id/rules/:rule_id
 
 Deletes existing rule.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -402,20 +466,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| rule_id | No | rule ids can be retrieved from */sites/:site_id/rules* Set rule id to get data for one rule. | | 3b2700490f39472dbc9cdb647936de11 |
+| site_id | Yes | Rule site id. These IDs can be retrieved from */sites.* | | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| rule_id | No | rule ids can be retrieved from */sites/:site_id/rules* | | 3b2700490f39472dbc9cdb647936de11 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/3b2700490f39472dbc9cdb647936de11
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -444,3 +512,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
 	"id": "3b2700490f39472dbc9cdb647936de11"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted object.

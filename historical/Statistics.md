@@ -1,16 +1,14 @@
-## Get all site statistics
-
 # GET /sites/:group/statistics
 
 Returns json data about worksite all statistics. The statistic store values for parameters such as presence, immobile, average speed and distance for objects by hours, days and monthes. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,20 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | group | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/statistics
 `
 
-# Example Responce
+### Example response
 
 ```
 [
@@ -73,9 +74,18 @@ http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics
 ]
 ```
 
----
+### Response explanation
 
-## Get worksite statistics by parameters
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| group | Site id. These IDs can be retrieved from */sites.*|
+| name | Statistic counter contains from three part *params.<object_id>.<param_name>. Set object_id for get data for only one object, to get statistics for all objects set value to **all**. *param_name* is a name of received parameter - *online*, *immobile*, *distance*, *speed*. |
+| type | Each counter have type, there are next types - hour, day, week, month and year. Type is a request url parameter and can take next value - **0**: Total, **1**: Year, **2**: Month, **3**: Day, **4**: Hour. |
+| values | Array of objects values. If type not total then each object have filed *year*, *month*, *day*, *hour* for storing date and hour and *value*. Value stores in seconds or meters depends on what parameter you asked. | 
+
+---
 
 # GET /sites/:group/statistics/:name
 
@@ -85,13 +95,13 @@ To get data for specified date you have to set url parameter *from_time* and *to
 
 The result values for distance return in meters, for presence and imobile in seconds.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics/:name
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -103,21 +113,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics/:name
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | group | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| name | Yest | Statistic counter contains from three part *params.<object_id>.<param_name>. Set object_id for get data for only one object, to get statistics for all objects set value to **all**. *param_name* is a name of received parameter - *online*, *immobile*, *distance*, *speed*.
+| name | Yes | Statistic counter contains from three part *params.<object_id>.<param_name>. Set object_id for get data for only one object, to get statistics for all objects set value to **all**. *param_name* is a name of received parameter - *online*, *immobile*, *distance*, *speed*. | | presence.36929eb1ee404aaa9de3114033c51386.338c32dee6a04c468a479330ad1d7acf |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 ```
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/statistics/params.all.distance?from_time=2017-11-22T22:00:00.000Z&timezone=Asia%2FBeirut&to_time=2017-11-23T21:59:00.000Z&type=4
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -164,5 +177,18 @@ http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics/:name
 }
 ```
 
+### Response explanation
+
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| group | Site id. These IDs can be retrieved from */sites.*|
+| name | Statistic counter contains from three part *params.<object_id>.<param_name>. Set object_id for get data for only one object, to get statistics for all objects set value to **all**. *param_name* is a name of received parameter - *online*, *immobile*, *distance*, *speed*. |
+| type | Each counter have type, there are next types - hour, day, week, month and year. Type is a request url parameter and can take next value - **0**: Total, **1**: Year, **2**: Month, **3**: Day, **4**: Hour. |
+| values | Array of objects values. If type not total then each object have filed *year*, *month*, *day*, *hour* for storing date and hour and *value*. Value stores in seconds or meters depends on what parameter you asked. | 
+
+
 ---
 
+# TO DO: post /sites/:grop/statistics/:name 

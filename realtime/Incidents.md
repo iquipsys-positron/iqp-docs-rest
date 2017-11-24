@@ -1,16 +1,14 @@
-## Get site incidents
-
 # GET /sites/:site_id/incidents
 
 Returns json array with data about all incidents on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -23,19 +21,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Incident site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -69,21 +71,42 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 }
 ```
 
----
+### Response explanation
 
-## Get incident info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Incident site id. These IDs can be retrieved from */sites.*|
+| rule_id | Defines what rule was triggered for this incident. Rule ids can be retrieved from */sites/:site_id/rules/* |
+| event_id | Defines what event related with incident. Event ids can be retrieved from */sites/:site_id/operational_events/* |
+| create_time | Time of the incident creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| pos | Position of the incident. It stores in geoJSON point format - object with property *coordinates* with array longtitude latitude pair |
+| severity | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events |
+| time | Time when incident happens. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| object_id | Object registered in incident. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| assign_id | Equipment or asset id assigned to object. If object doesn't have assign value is null. These ids can be retrieved from */sites/:site_id/control_objects/* |
+| zone_id | Zone where incident happens. Zone ids can be retrieved from */sites/:site_id/zones/* |
+| description | Name of the incident |
+| expected_value | Parameter value from rule. For example rule is immobility for 15 mins - value will be 15 |
+| actual_value | Actual parameter value. |
+| value_units | Units of the parameter value |
+| closed | Boolean variable, which displays is incident closed |
+| id | Inuque identifier of the incident |
+
+---
 
 # GET /sites/:site_id/incidents/:incident_id
 
 Returns json data about one or all incident on specified site. If you don't set *incident_id* result will contain all site incidents. To get info only about one incident you should set *incident_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -96,20 +119,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Incident site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | incident_id | No | incident ids can be retrieved from */sites/:site_id/incidents* Set incident id to get data for one incident. | | 7623803486e64b0a99dc8503e97a7058 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/7623803486e64b0a99dc8503e97a7058
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -138,21 +165,42 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 }
 ```
 
----
+### Response explanation
 
-## Create incident
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| site_id | Incident site id. These IDs can be retrieved from */sites.*|
+| rule_id | Defines what rule was triggered for this incident. Rule ids can be retrieved from */sites/:site_id/rules/* |
+| event_id | Defines what event related with incident. Event ids can be retrieved from */sites/:site_id/operational_events/* |
+| create_time | Time of the incident creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| pos | Position of the incident. It stores in geoJSON point format - object with property *coordinates* with array longtitude latitude pair |
+| severity | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events |
+| time | Time when incident happens. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| object_id | Object registered in incident. Object ids can be retrieved from */sites/:site_id/control_objects/* |
+| assign_id | Equipment or asset id assigned to object. If object doesn't have assign value is null. These ids can be retrieved from */sites/:site_id/control_objects/* |
+| zone_id | Zone where incident happens. Zone ids can be retrieved from */sites/:site_id/zones/* |
+| description | Name of the incident |
+| expected_value | Parameter value from rule. For example rule is immobility for 15 mins - value will be 15 |
+| actual_value | Actual parameter value. |
+| value_units | Units of the parameter value |
+| closed | Boolean variable, which displays is incident closed |
+| id | Inuque identifier of the incident |
+
+---
 
 # POST /sites/:site_id/incidents
 
-Creates new incident from json string for specified site. 
+Create new incident from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -169,7 +217,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Incident site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | rule_id | No | Defines what rule was triggered for this incident. Rule ids can be retrieved from */sites/:site_id/rules/* | | c71278120b9c4e2a8773e1c09503e532 |
 | pos | Yes | Position of the incident. It stores in geoJSON point format - object with property *coordinates* with array longtitude latitude pair.  | | { "coordinates": [ 30.646963119506836, 64.68692440226665 ] } |
 | severity | Yes | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. | | 0, 50, 100 |
@@ -182,13 +230,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 | value_units | Yes | Units of the parameter value | | min |
 | closed | Yes | Boolean variable, which displays is incident closed | | true, false |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -214,7 +266,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -243,21 +295,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
 }
 ```
 
----
+### Response explanation
 
-## Edit incident
+The result is json data of the new created incident.
+
+---
 
 # PUT /sites/:site_id/incidents/:incident_id
 
 Edit existing incident.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -274,7 +328,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Incident site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | rule_id | No | Defines what rule was triggered for this incident. Rule ids can be retrieved from */sites/:site_id/rules/* | | c71278120b9c4e2a8773e1c09503e532 |
 | pos | Yes | Position of the incident. It stores in geoJSON point format - object with property *coordinates* with array longtitude latitude pair.  | | { "coordinates": [ 30.646963119506836, 64.68692440226665 ] } |
 | severity | Yes | Severity of the rulre, can take one of three values : **0** for low prioprity events, **50** for high priority events and **100** for critical events. | | 0, 50, 100 |
@@ -287,20 +341,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 | value_units | Yes | Units of the parameter value | | min |
 | closed | Yes | Boolean variable, which displays is incident closed | | true, false |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Incident site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | incident_id | No | incident ids can be retrieved from */sites/:site_id/incidents* | | 2141085d65e94c3b83cf240dfdd4b40f |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
 PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/2141085d65e94c3b83cf240dfdd4b40f
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -310,7 +368,7 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -339,21 +397,23 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
----
+### Response explanation
 
-## Delete incident
+The result is json data of the edited incident.
+
+---
 
 # DELETE /sites/:site_id/incidents/:incident_id
 
 Deletes existing incident.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -365,20 +425,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Incident site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | incident_id | No | incident ids can be retrieved from */sites/:site_id/incidents* | | 2141085d65e94c3b83cf240dfdd4b40f |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/2141085d65e94c3b83cf240dfdd4b40f
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -406,3 +470,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
 	"id": "2141085d65e94c3b83cf240dfdd4b40f"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted incident.

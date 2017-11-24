@@ -1,16 +1,14 @@
-## Get sites
-
 # GET /sites
 
 Returns json array with data about existing sites
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,18 +20,21 @@ http://tracker.pipservices.net:8080/api/v1/sites
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
+### Access security 
 
-# Example Request
+To execute this request needed to be signed user.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites
 `
 
-# Example Responce
+### Example response
 
 ```
 {
-	"total": 71,
+	"total": 10,
 	"data": [
 	{
 		"center": {
@@ -78,21 +79,48 @@ http://tracker.pipservices.net:8080/api/v1/sites
 }
 ```
 
----
+### Response explanation
 
-## Get all sites
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| center | Site center on the map. It stores in geoJSON point format. Object with properties *type* and *coordinates* with array longtitude latitude pair. |
+| name | Name of the site |
+| language | Language of the site  |
+| create_time | Time of the site creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| active | Variable to store is worksite active |
+| version | Variable to store verstion of the worksite |
+| code | Inuque site code, can be used in access requests. |
+| active_int | Interval in seconds between messages from device, when it is active |
+| inactive_int | Interval in seconds between messages from device, when it is inactive |
+| offsite_int | Interval in seconds between messages from device, when it is out of site |
+| offline_timeout | Timeout in seconds when device become offline. When system doesn't receives any message from device *offline_timeout* seconds the device become offline on site |
+| radius | Radius from site center the border. Stores in killometers. |
+| geometry | Automaticaly generated from center and radius geometry object. |
+| boundaries | Automaticaly generated from center and radius boundaries object. |
+| timezone | Time zone of the site. Stores as string name of timezone |
+| date_rate | Trackers data rate. Can be 0-6 |
+| address | Worksite address |
+| org_size | Worksite employes quantity |
+| industry | Worksite industry. Can take next values: *mining*, *quarries*, *oilgas*, *contruction*, *roads*, *recreation*, *other*
+| purpose | Worksite puprose. Cane take next values: *safety*, *production*, *everything* |
+| total_sites | Total sites quantity |
+| id | Inuque identifier of the site |
+
+---
 
 # GET /sites
 
 Returns json array with data about all existing sites. Allowed only for system administators.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/all
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -104,14 +132,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/all
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
+### Access security 
 
-# Example Request
+To execute this request needed system administator role.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/all
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -160,21 +191,48 @@ http://tracker.pipservices.net:8080/api/v1/sites/all
 }
 ```
 
----
+### Response explanation
 
-## Get site info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| center | Site center on the map. It stores in geoJSON point format. Object with properties *type* and *coordinates* with array longtitude latitude pair. |
+| name | Name of the site |
+| language | Language of the site  |
+| create_time | Time of the site creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| active | Variable to store is worksite active |
+| version | Variable to store verstion of the worksite |
+| code | Inuque site code, can be used in access requests. |
+| active_int | Interval in seconds between messages from device, when it is active |
+| inactive_int | Interval in seconds between messages from device, when it is inactive |
+| offsite_int | Interval in seconds between messages from device, when it is out of site |
+| offline_timeout | Timeout in seconds when device become offline. When system doesn't receives any message from device *offline_timeout* seconds the device become offline on site |
+| radius | Radius from site center the border. Stores in killometers. |
+| geometry | Automaticaly generated from center and radius geometry object. |
+| boundaries | Automaticaly generated from center and radius boundaries object. |
+| timezone | Time zone of the site. Stores as string name of timezone |
+| date_rate | Trackers data rate. Can be 0-6 |
+| address | Worksite address |
+| org_size | Worksite employes quantity |
+| industry | Worksite industry. Can take next values: *mining*, *quarries*, *oilgas*, *contruction*, *roads*, *recreation*, *other*
+| purpose | Worksite puprose. Cane take next values: *safety*, *production*, *everything* |
+| total_sites | Total sites quantity |
+| id | Inuque identifier of the site |
+
+---
 
 # GET /sites/:site_id
 
 Returns json data about one or all site on specified site. If you don't set *site_id* result will contain all  sites. To get info only about one site you should set *site_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -187,19 +245,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -236,21 +298,48 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 }
 ```
 
----
+### Response explanation
 
-## Generate site code
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| center | Site center on the map. It stores in geoJSON point format. Object with properties *type* and *coordinates* with array longtitude latitude pair. |
+| name | Name of the site |
+| language | Language of the site  |
+| create_time | Time of the site creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ  |
+| active | Variable to store is worksite active |
+| version | Variable to store verstion of the worksite |
+| code | Inuque site code, can be used in access requests. |
+| active_int | Interval in seconds between messages from device, when it is active |
+| inactive_int | Interval in seconds between messages from device, when it is inactive |
+| offsite_int | Interval in seconds between messages from device, when it is out of site |
+| offline_timeout | Timeout in seconds when device become offline. When system doesn't receives any message from device *offline_timeout* seconds the device become offline on site |
+| radius | Radius from site center the border. Stores in killometers. |
+| geometry | Automaticaly generated from center and radius geometry object. |
+| boundaries | Automaticaly generated from center and radius boundaries object. |
+| timezone | Time zone of the site. Stores as string name of timezone |
+| date_rate | Trackers data rate. Can be 0-6 |
+| address | Worksite address |
+| org_size | Worksite employes quantity |
+| industry | Worksite industry. Can take next values: *mining*, *quarries*, *oilgas*, *contruction*, *roads*, *recreation*, *other*
+| purpose | Worksite puprose. Cane take next values: *safety*, *production*, *everything* |
+| total_sites | Total sites quantity |
+| id | Inuque identifier of the site |
+
+---
 
 # POST /sites/:site_id/generate_code
 
 Generate new unique identify code for site. As respond returns new generated code. Doesn't change existing code.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/generate_code
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -263,19 +352,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/generate_code
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
 POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/generate_code
 `
 
-# Example Responce
+### Example response
 
 ```
 "DEMOM56"
@@ -283,19 +376,17 @@ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3d
 
 ---
 
-## Create site
-
 # POST /sites
 
-Creates new site from json data.
+Create new site from json data.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -324,13 +415,17 @@ http://tracker.pipservices.net:8080/api/v1/sites
 | timezone | No | Time zone of the site | | Asia/Beirut, Europe/Moscow |
 | description | No | Site description, some info about site | |  Mine site with large territory and a few controlled objects | 
 
-# Example Request
+### Access security 
+
+To execute this request needed to be signed user.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -345,7 +440,7 @@ http://tracker.pipservices.net:8080/api/v1/sites
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -370,21 +465,23 @@ http://tracker.pipservices.net:8080/api/v1/sites
 }
 ```
 
----
+### Response explanation
 
-## Validate code
+The result is json data of the new created object.
+
+---
 
 # POST /sites/validate_code
 
 Using this request you can find existing site by code. If site exists request returns site id, otherwise empty string.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/validate_code
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -403,13 +500,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/validate_code
 |------|----------|-------------|---------------|---------|
 | code | Yes | Code of the existing site, you can get it from */sites* | | DELTH84 |
 
-# Example Request
+### Access security 
+
+To execute this request needed to be signed user.
+
+### Example Request
 
 `
 POST http://tracker.pipservices.net:8080/api/v1/sites/validate_code
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -418,27 +519,29 @@ POST http://tracker.pipservices.net:8080/api/v1/sites/validate_code
 
 ```
 
-# Example Responce
+### Example response
 
 ```
 "9e55c43454ad4c6f99cb20e06aac3b95"
 ```
 
----
+### Response explanation
 
-## Edit site
+The result is id of finded site by code.
+
+---
 
 # PUT /sites/:site_id
 
 Edit info about existing site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -467,19 +570,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 | timezone | No | Time zone of the site | | Asia/Beirut, Europe/Moscow |
 | description | No | Site description, some info about site | |  Mine site with large territory and a few controlled objects | 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -488,7 +595,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -515,21 +622,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 }
 ```
 
----
+### Response explanation
 
-## Delete site
+The result is json data of the edited object.
+
+---
 
 # DELETE /sites/:site_id
 
 Delete existing site from system.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -541,19 +650,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 1c1bf27822cc41e688575595f747fb0e |
 
-# Example Request
+### Access security 
+
+To execute this request needed system administator role.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -580,21 +693,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id
 }
 ```
 
----
+### Response explanation
 
-## Remove site
+The result is json data of the deleted object.
+
+---
 
 # POST /sites/:site_id/remove
 
 Remove signed user from setted site. Returns nothing, and disconnects user from site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/remove
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -606,18 +721,22 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/remove
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9e55c43454ad4c6f99cb20e06aac3b95 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/remove
 `
 
-# Example Responce
+### Example response
 
 *No content*

@@ -1,16 +1,14 @@
-## Get site users
-
 # GET /sites/:site_id/users
 
 Returns json array with data about all site users.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/users
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,20 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/users
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/users
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -72,21 +73,35 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/users
 }
 ```
 
----
+### Response explanation
 
-## Connect to demo site
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| name | User name |
+| login | User login |
+| language | User interface language |
+| theme | User interface theme. Can be *default* or *accent*  |
+| time_zone | User time zone, can be null. Stores as string with timezone name. |
+| active | Stores is user account active |
+| create_time | Time of the gateway creation. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| roles | All user roles. Roles is array of strings, each string is a role for some site. Roles have following structure "<site_id>:<role>". *site_id* can be retrieved from */sites.*, *role* can take next values: *user*, *manager*, *admin*. System administrator have role **admin** without site_id. |
+| id | Inuque identifier of the user account |
+
+---
 
 # POST /sites/demo/roles
 
-Connect user with id sended in post body as user_id to demo worksite. As responce returns demo site id.
+Connect user with id sended in post body as user_id to demo worksite. As response returns demo site id.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/demo/roles
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -105,14 +120,17 @@ http://tracker.pipservices.net:8080/api/v1/sites/demo/roles
 |------|----------|-------------|---------------|---------|
 | user_id | Yes | User with this id will be connected to demo site. User id's can be retrieved from */accounts.*| | cd65c2023be34e84b2e9529264d17d21 |
 
+### Access security 
 
-# Example Request
+To execute this request needed to be signed user.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/demo/roles
 `
 
-# Example Body
+### Example Body
 
 ```
 { 
@@ -120,27 +138,29 @@ http://tracker.pipservices.net:8080/api/v1/sites/demo/roles
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 "9cfaf79bc95b4a9e912314eb3db7a4ba"
 ```
 
----
+### Response explanation
 
-## Connect to existing site
+The request result is a demo site id.
+
+---
 
 # POST /sites/:site_id/roles
 
-Connect user with id sended in post body as user_id to worksite with :site_id. As responce returns all user roles.
+Connect user with id sended in post body as user_id to worksite with :site_id. As response returns all user roles.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -160,19 +180,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 | user_id | Yes | User with this id will be connected to demo site. User id's can be retrieved from */accounts.*| | a054374c0e984777ab2455abeaf32083 |
 | role | Yes | User role, there is three type of roles: user, manager, admin. User have read only access, manager can't change worksite settings, edit devices, accounts and gateways. Admin have full access on worksite. | | manager |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/roles
 `
 
-# Example Body
+### Example Body
 
 ```
 { 
@@ -181,7 +205,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 [
@@ -190,21 +214,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 ],
 ```
 
+### Response explanation
+
+The request result is an array of user roles. Roles is array of strings, each string is a role for some site. Roles have following structure "<site_id>:<role>". *site_id* can be retrieved from */sites.*, *role* can take next values: *user*, *manager*, *admin*. System administrator have role **admin** without site_id.
+
 ---
 
-## Disconnect user from existing site
+# DELETE /sites/:site_id/roles
 
-# DEL /sites/:site_id/roles
+Remove user with id sended in post body as user_id from worksite with :site_id. As response returns all user roles.
 
-Connect user with id sended in post body as user_id to worksite with :site_id. As responce returns all user roles.
-
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -224,19 +250,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 | user_id | Yes | User with this id will be connected to demo site. User id's can be retrieved from */accounts.*| | a054374c0e984777ab2455abeaf32083 |
 | role | Yes | User role, there is three type of roles: user, manager, admin. User have read only access, manager can't change worksite settings, edit devices, accounts and gateways. Admin have full access on worksite. | | manager |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
 | site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site admin or owner or higher roles.
+
+### Example Request
 
 `
  DEL http://tracker.pipservices.net:8080/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/roles
 `
 
-# Example Body
+### Example Body
 
 ```
 { 
@@ -245,12 +275,16 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 [
     "9cfaf79bc95b4a9e912314eb3db7a4ba:manager"
 ],
 ```
+
+### Response explanation
+
+The request result is an array of user roles. Roles is array of strings, each string is a role for some site. Roles have following structure "<site_id>:<role>". *site_id* can be retrieved from */sites.*, *role* can take next values: *user*, *manager*, *admin*. System administrator have role **admin** without site_id.
 
 ---

@@ -1,16 +1,14 @@
-## Get site resolutions
-
 # GET /sites/:site_id/resolutions
 
 Returns json array with data about all resolutions on specified site.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -22,19 +20,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -64,21 +66,31 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 }
 ```
 
----
+### Response explanation
 
-## Get resolution info
+The request result is an array of objects with following structure
+
+| Name | Description | 
+|------|----------|
+| default | Displayes if resolution will be used as default for incidents |
+| site_id |  Resolution site id. These IDs can be retrieved from */sites.* |
+| resolution | Name of the resolution |
+| rule_ids | The array of string rule ids, which incidents will be resolved by this resolution. Rule ids can be retrieved from */sites/:site_id/rules* |
+| id | Inuque identifier of the event template |
+
+---
 
 # GET /sites/:site_id/resolutions/:resolution_id
 
 Returns json data about one or all resolution on specified site. If you don't set *resolution_id* result will contain all site resolutions. To get info only about one resolution you should set *resolution_id* in request url.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolution_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -91,20 +103,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolutio
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | resolution_id | No | Resolution ids can be retrieved from */sites/:site_id/resolutions* Set resolution id to get data for one resolution. | | 2082036b232840b78d94056a75a15887 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
 
 `
  GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/2082036b232840b78d94056a75a15887
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -118,21 +134,31 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolutio
 }
 ```
 
----
+### Response explanation
 
-## Create resolution
+The request result is an object with following structure
+
+| Name | Description | 
+|------|----------|
+| default | Displayes if resolution will be used as default for incidents |
+| site_id |  Resolution site id. These IDs can be retrieved from */sites.* |
+| resolution | Name of the resolution |
+| rule_ids | The array of string rule ids, which incidents will be resolved by this resolution. Rule ids can be retrieved from */sites/:site_id/rules* |
+| id | Inuque identifier of the event template |
+
+---
 
 # POST /sites/:site_id/resolutions
 
-Creates new resolution from json string for specified site. 
+Create new resolution from json string for specified site. 
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -149,24 +175,28 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | resolution | Yes | Name of the resolution | | Call supervisor |
 | default | No | Displayes if resolution will be used as default for incidents | | true, false |
 | rule_ids | No | The array of string rule ids, wich incidents will be resolved by this resolution. Rule ids can be retrieved from */sites/:site_id/rules* | |  [ "c71278120b9c4e2a8773e1c09503e532" ] |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | Yes | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -179,7 +209,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -193,21 +223,23 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
 }
 ```
 
----
+### Response explanation
 
-## Edit resolution
+The result is json data of the new created object.
+
+---
 
 # PUT /sites/:site_id/resolutions/:resolution_id
 
 Edit existing resolution.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolution_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -224,25 +256,29 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolutio
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | No | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| site_id | No | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
 | resolution | Yes | Name of the resolution | | Call supervisor |
 | default | No | Displayes if resolution will be used as default for incidents | | true, false |
 | rule_ids | No | The array of string rule ids, wich incidents will be resolved by this resolution. Rule ids can be retrieved from */sites/:site_id/rules* | |  [ "c71278120b9c4e2a8773e1c09503e532" ] |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| resolution_id | No | Resolution ids can be retrieved from */sites/:site_id/resolutions* Set resolution id to get data for one resolution. | | 2082036b232840b78d94056a75a15887 |
+| site_id | Yes | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| resolution_id | No | Resolution ids can be retrieved from */sites/:site_id/resolutions* | | 2082036b232840b78d94056a75a15887 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
 PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/b1c50f73843342d8809e051bf393faf6
 `
 
-# Example Body
+### Example Body
 
 ```
 {
@@ -250,7 +286,7 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -264,21 +300,23 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 }
 ```
 
----
+### Response explanation
 
-## Delete resolution
+The result is json data of the edited object.
+
+---
 
 # DELETE /sites/:site_id/resolutions/:resolution_id
 
 Deletes existing resolution.
 
-# Request URL
+### Request URL
 
 `
 http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolution_id
 `
 
-# Request Information
+### Request Information
 
 | Property | Value |
 |----|----|
@@ -290,20 +328,24 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolutio
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-# Parameters
+### Parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| site_id | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| resolution_id | No | Resolution ids can be retrieved from */sites/:site_id/resolutions* Set resolution id to get data for one resolution. | | 2082036b232840b78d94056a75a15887 |
+| site_id | Yes | Resolution site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| resolution_id | No | Resolution ids can be retrieved from */sites/:site_id/resolutions* | | 2082036b232840b78d94056a75a15887 |
 
-# Example Request
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
 
 `
  DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/b1c50f73843342d8809e051bf393faf6
 `
 
-# Example Responce
+### Example response
 
 ```
 {
@@ -316,3 +358,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolutio
 	"id": "b1c50f73843342d8809e051bf393faf6"
 }
 ```
+
+### Response explanation
+
+The result is json data of the deleted object.
