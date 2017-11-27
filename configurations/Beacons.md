@@ -141,7 +141,7 @@ The request result is an object with following structure
 
 ---
 
-# TO DO : <a name="calc-position">POST /sites/:site_id/beacons/calculate_position</a>
+# <a name="calc-position">POST /sites/:site_id/beacons/calculate_position</a>
 
 Calculates object position by data from beacons
 
@@ -199,12 +199,12 @@ To execute this request needed site manager or higher roles.
 ### Example response
 
 ```
-
+No cotent
 ```
 
 ### Response explanation
 
-The request result is an object position.
+The request result is an object position, if object position can't be calculated return empty result.
 
 ---
 
