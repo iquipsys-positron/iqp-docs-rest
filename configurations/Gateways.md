@@ -1,4 +1,17 @@
-# GET /sites/:site_id/gateways
+Page navigation
+
+* [Get worksite gateways](#gateways)
+* [Get gateway info](#gateway)
+* [Create gateway](#new-gateway)
+* [Validate udi](#validate-udi)
+* [Update gateway](#edit-gateway)
+* [Delete gateway](#delete-gateway)
+* [Ping gateway](#ping-gateway)
+* [Request gateway statistics](#stats-gateway)
+
+---
+
+# <a name="gateways">GET /sites/:site_id/gateways</a>
 
 Returns json array with data about all gateways on specified site.
 
@@ -80,7 +93,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/gateways/:gateway_id
+# <a name="gateway">GET /sites/:site_id/gateways/:gateway_id</a>
 
 Returns json data about one or all gateways on specified site. If you don't set *gateway_id* result will contain all site gateways. To get info only about one gateway you should set *gateway_id* in request url.
 
@@ -152,9 +165,7 @@ The request result is an object with following structure
 
 ---
 
-# Create gateway
-
-### POST /sites/:site_id/gateways
+# <a name="new-gateway">POST /sites/:site_id/gateways</a>
 
 Creates new gateway from json string for specified site. 
 
@@ -234,7 +245,7 @@ The result is json data of new created object.
 
 ---
 
-# POST /sites/:site_id/gateways/validate_udi
+# <a name="validate-udi">POST /sites/:site_id/gateways/validate_udi</a>
 
 Return gateway id for setted udi in request body. If gateway not found returns empty string.
 
@@ -293,7 +304,7 @@ The result is an id of finded gateway by udi.
 
 ---
 
-# PUT /sites/:site_id/gateways/:gateway_id
+# <a name="edit-gateway">PUT /sites/:site_id/gateways/:gateway_id</a>
 
 Edit existing gateway.
 
@@ -373,7 +384,7 @@ The result is edited object json data.
 
 ---
 
-# DELETE /sites/:site_id/gateways/:gateway_id
+# <a name="delete-gateway">DELETE /sites/:site_id/gateways/:gateway_id</a>
 
 Deletes existing gateway.
 
@@ -432,9 +443,7 @@ The result is deleted object json data.
 
 ---
 
-# TO DO : ping gateway
-
-# POST /sites/:site_id/gateways/:gateway_id/ping
+# <a name="ping-gateway">POST /sites/:site_id/gateways/:gateway_id/ping</a>
 
 Ping existing gateway.
 
@@ -456,12 +465,6 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/p
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-- ### Body parameters
-
-| Name | Required | Description | Default value | Examples |
-|------|----------|-------------|---------------|---------|
-| | | | | |
-
 ### Access security 
 
 To execute this request needed site admin or higher roles.
@@ -469,24 +472,16 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f/ping
+ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/c5100dc948a0451889864abb091a3313/ping
 `
-
-### Example response
-
-```
-
-```
 
 ### Response explanation
 
-The result is data about ping gateway.
+If no errors received the ping is successfull.
 
 ---
 
-# TO DO : request_stats gateway
-
-# POST /sites/:site_id/gateways/:gateway_id/request_stats
+# <a name="stats-gateway">POST /sites/:site_id/gateways/:gateway_id/request_stats</a>
 
 Returns gateways statistics information.
 
@@ -508,12 +503,6 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/r
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-- ### Body parameters
-
-| Name | Required | Description | Default value | Examples |
-|------|----------|-------------|---------------|---------|
-| | | | | |
-
 ### Access security 
 
 To execute this request needed site admin or higher roles.
@@ -523,12 +512,6 @@ To execute this request needed site admin or higher roles.
 `
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f/request_stats
 `
-
-### Example response
-
-```
-
-```
 
 ### Response explanation
 

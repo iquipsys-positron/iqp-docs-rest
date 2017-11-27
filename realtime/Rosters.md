@@ -1,4 +1,14 @@
-# GET /sites/:site_id/rosters
+Page navigation
+
+* [Get worksite all rosters](#rosters)
+* [Get worksite roster](#roster)
+* [Create roster](#new-roster)
+* [Update rosters](#edit-rosters)
+* [Delete roster](#delete-roster)
+
+---
+
+# <a name="rosters">GET /sites/:site_id/rosters</a>
 
 Returns json array with data about all rosters on specified site.
 
@@ -98,7 +108,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/rosters/:roster_id
+# <a name="roster">GET /sites/:site_id/rosters/:roster_id</a>
 
 Returns json data about one or all roster on specified site. If you don't set *roster_id* result will contain all site rosters. To get info only about one roster you should set *roster_id* in request url.
 
@@ -175,7 +185,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/rosters
+# <a name="new-roster">POST /sites/:site_id/rosters</a>
 
 Creates new roster from json string for specified site. 
 
@@ -266,7 +276,7 @@ The result is json data of the new created roster.
 
 ---
 
-# PUT /sites/:site_id/rosters/:roster_id
+# <a name="edit-roster">PUT /sites/:site_id/rosters/:roster_id</a>
 
 Edit existing roster.
 
@@ -353,7 +363,7 @@ PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db
 The result is json data of the edited roster.
 ---
 
-# DELETE /sites/:site_id/rosters/:roster_id
+# <a name="delete-roster">DELETE /sites/:site_id/rosters/:roster_id</a>
 
 Deletes existing roster.
 

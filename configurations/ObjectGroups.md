@@ -1,4 +1,14 @@
-# GET /sites/:site_id/object_groups
+Page navigation
+
+* [Get worksite object groups](#object-groups)
+* [Get object group info](#object-group)
+* [Create object group](#new-object-group)
+* [Update object group](#edit-object-group)
+* [Delete object group](#delete-object-group)
+
+---
+
+# <a name="object-groups">GET /sites/:site_id/object_groups</a>
 
 Returns json array with data about all object groups on specified site.
 
@@ -80,7 +90,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/object_groups/:group_id
+# <a name="object-group">GET /sites/:site_id/object_groups/:group_id</a>
 
 Returns json data about one or all object groups on specified site. If you don't set *group_id* result will contain all site object groups. To get info only about one object group you should set *group_id* in request url.
 
@@ -149,7 +159,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/object_groups
+# <a name="new-object-group">POST /sites/:site_id/object_groups</a>
 
 Creates new object group from json string for specified site. 
 
@@ -222,7 +232,7 @@ The result is json data of the new created object.
 
 ---
 
-# PUT /sites/:site_id/object_groups/:group_id
+# <a name="edit-object-group">PUT /sites/:site_id/object_groups/:group_id</a>
 
 Edit existing object group.
 
@@ -298,7 +308,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/object_groups/:group_id
+# <a name="delete-object-group">DELETE /sites/:site_id/object_groups/:group_id</a>
 
 Deletes existing object group.
 

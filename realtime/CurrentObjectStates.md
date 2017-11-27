@@ -1,4 +1,14 @@
-# GET /sites/:site_id/curr_object_states
+Page navigation
+
+* [Get worksite all current object states](#current-object-states)
+* [Get worksite current object state](#current-object-state)
+* [Update current object state](#edit-current-object-states)
+* [Delete all current object states](#delete-current-object-states)
+* [Delete current object state](#delete-current-object-state)
+
+---
+
+# <a name="current-object-states">GET /sites/:site_id/curr_object_states</a>
 
 Returns json data about worksite all current object states.
 
@@ -123,7 +133,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/curr_object_states/:state_id
+# <a name="current-object-state">GET /sites/:site_id/curr_object_states/:state_id</a>
 
 Returns json data about one or all current object state on specified site. If you don't set *state_id* result will contain all site curr_object_states. To get info only about one current object state you should set *state_id* in request url.
 
@@ -244,7 +254,7 @@ The request result is an object with following structure
 
 ---
 
-# PUT /sites/:site_id/curr_object_states/:state_id
+# <a name="edit-current-object-state">PUT /sites/:site_id/curr_object_states/:state_id</a>
 
 Edit existing current object state. As a result returns all current object states.
 
@@ -377,14 +387,14 @@ The result is json data of the edited current object state.
 
 ---
 
-# DELETE /sites/:site_id/curr_object_states/:state_id
+# <a name="delete-current-object-states">DELETE /sites/:site_id/curr_object_states</a>
 
 Delete all existing current object state by state id. As result return all deleted states.
 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states/:state_id
+http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states
 `
 
 ### Request Information
@@ -475,7 +485,7 @@ The result is json array of all deleted current object states.
 
 ---
 
-# DELETE /sites/:site_id/curr_object_states/:state_id
+# <a name="delete-current-object-state">DELETE /sites/:site_id/curr_object_states/:state_id</a>
 
 Delete existing current object state by state id.
 

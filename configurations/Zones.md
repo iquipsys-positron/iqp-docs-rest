@@ -1,4 +1,14 @@
-# GET /sites/:site_id/zones
+Page navigation
+
+* [Get worksite zones](#zones)
+* [Get zone info](#zone)
+* [Create zone](#new-zone)
+* [Update zone](#edit-zone)
+* [Delete zone](#delete-zone)
+
+---
+
+# <a name="zones">GET /sites/:site_id/zones</a>
 
 Returns json array with data about all zones on specified site. There is different zone types - line, circle and polygone for geo zone and object zone.
 
@@ -129,7 +139,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/zones/:zone_id
+# <a name="zone">GET /sites/:site_id/zones/:zone_id</a>
 
 Returns json data about one or all zone on specified site. If you don't set *zone_id* result will contain all site zones. To get info only about one zone you should set *zone_id* in request url.
 
@@ -209,7 +219,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/zones
+# <a name="new-zone">POST /sites/:site_id/zones</a>
 
 Create new zone from json string for specified site. The coordinates format depends on zone type, make sure that you use correct format for coordinates array using GeoJSON.
 
@@ -306,7 +316,7 @@ The result is json data of the new created object.
 
 ---
 
-# PUT /sites/:site_id/zones/:zone_id
+# <a name="edit-zone">PUT /sites/:site_id/zones/:zone_id</a>
 
 Edit existing zone.
 
@@ -396,7 +406,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/zones/:zone_id
+# <a name="delete-zone">DELETE /sites/:site_id/zones/:zone_id</a>
 
 Deletes existing zone.
 

@@ -1,4 +1,14 @@
-# GET /sites/:site_id/object_states
+Page navigation
+
+* [Get worksite object states](#object-states)
+* [Get worksite object states by current timeline](#object-state-timeline)
+* [Create object states](#new-object-state)
+* [Create multiple object states](#new-object-states)
+* [Delete object state](#delete-object-state)
+
+---
+
+# <a name="object-states">GET /sites/:site_id/object_states</a>
 
 Returns json data about worksite all object states.
 
@@ -120,7 +130,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/object_states/timeline
+# <a name="object-states-timeline">GET /sites/:site_id/object_states/timeline</a>
 
 Returns json data about worksite object states for current timeline. Current timeline is 15 minutes interval, in which included current time.
 
@@ -251,7 +261,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# POST /sites/:site_id/object_states
+# <a name="new-object-state">POST /sites/:site_id/object_states</a>
 
 Create new object state from json string for specified site. 
 
@@ -355,7 +365,7 @@ No content
 
 ---
 
-# POST /sites/:site_id/object_states/batch
+# <a name="new-object-states">POST /sites/:site_id/object_states/batch</a>
 
 Batch insert for object states from json string for specified site. Create multple object states at one request for sended array of object states.
 
@@ -495,7 +505,7 @@ No content
 
 ---
 
-# DELETE /sites/:site_id/object_states
+# <a name="delete-object-states">DELETE /sites/:site_id/object_states</a>
 
 Delete all object states on specified worksite.
 

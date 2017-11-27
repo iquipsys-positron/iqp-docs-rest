@@ -1,4 +1,15 @@
-# GET /sites/:site_id/rules
+Page navigation
+
+* [Get worksite rules](#rules)
+* [Get rule info](#rule)
+* [Calculate position](#calc-position)
+* [Create rule](#new-rule)
+* [Update rule](#edit-rule)
+* [Delete rule](#delete-rule)
+
+---
+
+# <a name="rules">GET /sites/:site_id/rules</a>
 
 Returns json array with data about all rules on specified site.
 
@@ -128,7 +139,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/rules/:rule_id
+# <a name="rule">GET /sites/:site_id/rules/:rule_id</a>
 
 Returns json data about one or all rule on specified site. If you don't set *rule_id* result will contain all site rules. To get info only about one rule you should set *rule_id* in request url.
 
@@ -226,7 +237,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/rules
+# <a name="new-rule">POST /sites/:site_id/rules</a>
 
 Create new rule from json string for specified site. 
 
@@ -338,7 +349,7 @@ The result is json data of the new created object.
 
 ---
 
-# PUT /sites/:site_id/rules/:rule_id
+# <a name="edit-rule">PUT /sites/:site_id/rules/:rule_id</a>
 
 Edit existing rule.
 
@@ -444,7 +455,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/rules/:rule_id
+# <a name="delete-rule">DELETE /sites/:site_id/rules/:rule_id</a>
 
 Deletes existing rule.
 

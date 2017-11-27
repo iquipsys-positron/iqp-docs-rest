@@ -1,4 +1,13 @@
-# GET /sites/:site_id/users
+Page navigation
+
+* [Get worksite users](#users)
+* [Connect to demo site](#connect-demo)
+* [Connect to worksite by site_id](#connect-by-id)
+* [Disconnect from worksite](#disconnect)
+
+---
+
+# <a name="users">GET /sites/:site_id/users</a>
 
 Returns json array with data about all site users.
 
@@ -91,7 +100,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# POST /sites/demo/roles
+# <a name="connect-demo">POST /sites/demo/roles</a>
 
 Connect user with id sended in post body as user_id to demo worksite. As response returns demo site id.
 
@@ -150,7 +159,7 @@ The request result is a demo site id.
 
 ---
 
-# POST /sites/:site_id/roles
+# <a name="coonect-by-id">POST /sites/:site_id/roles</a>
 
 Connect user with id sended in post body as user_id to worksite with :site_id. As response returns all user roles.
 
@@ -220,7 +229,7 @@ The request result is an array of user roles. Roles is array of strings, each st
 
 ---
 
-# DELETE /sites/:site_id/roles
+# <a name="disconnect">DELETE /sites/:site_id/roles</a>
 
 Remove user with id sended in post body as user_id from worksite with :site_id. As response returns all user roles.
 

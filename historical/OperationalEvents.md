@@ -1,4 +1,12 @@
-# GET /sites/:site_id/operational_events
+Page navigation
+
+* [Get worksite operational events](#operational-events)
+* [Create operational event](#new-operational-event)
+* [Delete operational event](#delete-operational-event)
+
+---
+
+# <a name="operational-events">GET /sites/:site_id/operational_events</a>
 
 Returns json data about all worksite operational events.
 
@@ -119,7 +127,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# POST /sites/:site_id/operational_events
+# <a name="new-operational-event">POST /sites/:site_id/operational_events</a>
 
 Create new operational event from json string for specified site. 
 
@@ -233,7 +241,7 @@ The result is json data of the new created event.
 
 ---
 
-# DELETE /sites/:site_id/operational_events/:event_id
+# <a name="delete-operational-event">DELETE /sites/:site_id/operational_events/:event_id</a>
 
 Delete all existing current operational event by state id. As result return all deleted states.
 

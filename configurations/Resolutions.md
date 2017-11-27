@@ -1,4 +1,14 @@
-# GET /sites/:site_id/resolutions
+Page navigation
+
+* [Get worksite resolutions](#resolutions)
+* [Get resolution info](#resolution)
+* [Create resolution](#new-resolution)
+* [Update resolution](#edit-resolution)
+* [Delete resolution](#delete-resolution)
+
+---
+
+# <a name="resolutions">GET /sites/:site_id/resolutions</a>
 
 Returns json array with data about all resolutions on specified site.
 
@@ -80,7 +90,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/resolutions/:resolution_id
+# <a name="resolution">GET /sites/:site_id/resolutions/:resolution_id</a>
 
 Returns json data about one or all resolution on specified site. If you don't set *resolution_id* result will contain all site resolutions. To get info only about one resolution you should set *resolution_id* in request url.
 
@@ -148,7 +158,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/resolutions
+# <a name="new-resolution">POST /sites/:site_id/resolutions</a>
 
 Create new resolution from json string for specified site. 
 
@@ -229,7 +239,7 @@ The result is json data of the new created object.
 
 ---
 
-# PUT /sites/:site_id/resolutions/:resolution_id
+# <a name="edit-resolution">PUT /sites/:site_id/resolutions/:resolution_id</a>
 
 Edit existing resolution.
 
@@ -306,7 +316,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/resolutions/:resolution_id
+# <a name="delete-resolution">DELETE /sites/:site_id/resolutions/:resolution_id</a>
 
 Deletes existing resolution.
 

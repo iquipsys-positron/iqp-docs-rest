@@ -1,4 +1,15 @@
-# GET /sites/:site_id/invitations
+Page navigation
+
+* [Get worksite invitations](#invitations)
+* [Get invitation info](#invitation)
+* [Create invitation](#new-invitation)
+* [Delete invitation](#delete-invitation)
+* [Resend invitation](#resend-invitation)
+* [Respond invitation](#respond-invitation)
+
+---
+
+# <a name="invitations">GET /sites/:site_id/invitations</a>
 
 Returns json array with data about all invitations on specified site.
 
@@ -80,7 +91,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/invitations/:invitation_id
+# <a name="invitation">GET /sites/:site_id/invitations/:invitation_id</a>
 
 Returns json data about one or all invitation on specified site. If you don't set *invitation_id* result will contain all site invitations. To get info only about one invitation you should set *invitation_id* in request url.
 
@@ -158,7 +169,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/invitations
+# <a name="new-invitation">POST /sites/:site_id/invitations</a>
 
 Creates new invitation from json string to specified site. 
 
@@ -241,7 +252,70 @@ The result is json data of new created invitation.
 
 ---
 
-# POST /sites/:site_id/invitations/:invitation_id/resend
+# <a name="delete-invitation">DELETE /sites/:site_id/invitations/:invitation_id</a>
+
+Deletes existing invitation.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations/:invitation_id
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| site_id | Yes | Invitation site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| invitation_id | No | invitation ids can be retrieved from */sites/:site_id/invitations* | | 8740dc302f5b4cc7b78a05b5918c1440 |
+
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
+
+`
+ DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
+`
+
+### Example response
+
+```
+{
+	"creator_id": "cd65c2023be34e84b2e9529264d17d21",
+	"creator_name": "Dmitriy Krainiy",
+	"invitee_email": "admin@gmail.com",
+	"site_id": "9cfaf79bc95b4a9e912314eb3db7a4ba",
+	"site_name": "Demo Minesite",
+	"role": "admin",
+	"type": "activation",
+	"create_time": "2017-11-21T08:12:49.758Z",
+	"expire_time": "2017-12-06T08:12:49.758Z",
+	"sent_time": "2017-11-21T08:12:49.758Z",
+	"id": "8740dc302f5b4cc7b78a05b5918c1440"
+}
+```
+
+### Response explanation
+
+The result is json data of the deleted invitation.
+
+---
+
+# <a name="resend-invitation">POST /sites/:site_id/invitations/:invitation_id/resend</a>
 
 Resend email to invited user by existing invitation.
 
@@ -305,7 +379,7 @@ The result is json data of the resended invitation.
 
 ---
 
-# POST /sites/:site_id/invitations/:invitation_id/respond
+# <a name="respond-invitation">POST /sites/:site_id/invitations/:invitation_id/respond</a>
 
 Accepts existing invitation by invitee user.
 
@@ -366,66 +440,3 @@ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3d
 ### Response explanation
 
 The result is json data about responsed invitation.
-
----
-
-# DELETE /sites/:site_id/invitations/:invitation_id
-
-Deletes existing invitation.
-
-### Request URL
-
-`
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations/:invitation_id
-`
-
-### Request Information
-
-| Property | Value |
-|----|----|
-| Response formats | JSON |
-| Requires authentication | YES |
-
-- ### Required headers
-| Header name | Description | Example |
-|----|----|----|
-| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
-
-### Parameters
-
-| Name | Required | Description | Default value | Examples |
-|------|----------|-------------|---------------|---------|
-| site_id | Yes | Invitation site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
-| invitation_id | No | invitation ids can be retrieved from */sites/:site_id/invitations* | | 8740dc302f5b4cc7b78a05b5918c1440 |
-
-### Access security 
-
-To execute this request needed site manager or higher roles.
-
-### Example Request
-
-`
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
-`
-
-### Example response
-
-```
-{
-	"creator_id": "cd65c2023be34e84b2e9529264d17d21",
-	"creator_name": "Dmitriy Krainiy",
-	"invitee_email": "admin@gmail.com",
-	"site_id": "9cfaf79bc95b4a9e912314eb3db7a4ba",
-	"site_name": "Demo Minesite",
-	"role": "admin",
-	"type": "activation",
-	"create_time": "2017-11-21T08:12:49.758Z",
-	"expire_time": "2017-12-06T08:12:49.758Z",
-	"sent_time": "2017-11-21T08:12:49.758Z",
-	"id": "8740dc302f5b4cc7b78a05b5918c1440"
-}
-```
-
-### Response explanation
-
-The result is json data of the deleted invitation.

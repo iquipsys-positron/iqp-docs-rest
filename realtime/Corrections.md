@@ -1,4 +1,14 @@
-# GET /sites/:site_id/corrections
+Page navigation
+
+* [Get worksite all corrections](#corrections)
+* [Get worksite correction](#correction)
+* [Create correction](#new-correction)
+* [Update corrections](#edit-corrections)
+* [Delete correction](#delete-correction)
+
+---
+
+# <a name="corrections">GET /sites/:site_id/corrections</a>
 
 Returns json array with data about all corrections on specified site.
 
@@ -125,7 +135,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/corrections/:correction_id
+# <a name="correction">GET /sites/:site_id/corrections/:correction_id</a>
 
 Returns json data about one or all correction on specified site. If you don't set *correction_id* result will contain all site corrections. To get info only about one correction you should set *correction_id* in request url.
 
@@ -204,7 +214,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/corrections
+# <a name="new-corrections">POST /sites/:site_id/corrections</a>
 
 Creates new correction from json string for specified site. 
 
@@ -291,7 +301,7 @@ The result is json data of the new created correction.
 
 ---
 
-# PUT /sites/:site_id/corrections/:correction_id
+# <a name="edit-correction">PUT /sites/:site_id/corrections/:correction_id</a>
 
 Edit existing correction.
 
@@ -383,7 +393,7 @@ The result is json data of the edited correction.
 
 ---
 
-# DELETE /sites/:site_id/corrections/:correction_id
+# <a name="delete-correction">DELETE /sites/:site_id/corrections/:correction_id</a>
 
 Deletes existing correction.
 

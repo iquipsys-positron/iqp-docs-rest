@@ -1,4 +1,14 @@
-# GET /sites/:site_id/event_templates
+Page navigation
+
+* [Get worksiteevent templates](#event-templates)
+* [Getevent template info](#event-template)
+* [Createevent template](#new-event-template)
+* [Updateevent template](#edit-event-template)
+* [Deleteevent template](#delete-event-template)
+
+---
+
+# <a name="event-templates">GET /sites/:site_id/event_templates</a>
 
 Returns json array with data about all event templates on specified site.
 
@@ -81,7 +91,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/event_templates/:template_id
+# <a name="event-template">GET /sites/:site_id/event_templates/:template_id</a>
 
 Returns json data about one or all event templates on specified site. If you don't set *template_id* result will contain all site event templates. To get info only about one event template you should set *template_id* in request url.
 
@@ -151,7 +161,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/event_templates
+# <a name="new-event-template">POST /sites/:site_id/event_templates</a>
 
 Create new event template from json string for specified site. 
 
@@ -234,7 +244,7 @@ The result is json data of new created object.
 
 ---
 
-# PUT /sites/:site_id/event_templates/:template_id
+# <a name="edit-event-template">PUT /sites/:site_id/event_templates/:template_id</a>
 
 Edit existing event template.
 
@@ -317,7 +327,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/event_templates/:template_id
+# <a name="delete-event-template">DELETE /sites/:site_id/event_templates/:template_id</a>
 
 Deletes existing event template.
 

@@ -1,4 +1,17 @@
-# GET /sites
+Page navigation
+
+* [Get user sites](#sites)
+* [Get all sites](#sites-all)
+* [Get site info](#site)
+* [Generate site code](#generate-code)
+* [Create site](#new-site)
+* [Validate site code](#validate-code)
+* [Update site](#edit-site)
+* [Delete site](#delete-site)
+
+---
+
+# <a name="sites">GET /sites</a>
 
 Returns json array with data about existing sites
 
@@ -110,7 +123,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites
+# <a name="sites-all">GET /sites/all</a>
 
 Returns json array with data about all existing sites. Allowed only for system administators.
 
@@ -222,7 +235,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id
+# <a name="site">GET /sites/:site_id</a>
 
 Returns json data about one or all site on specified site. If you don't set *site_id* result will contain all  sites. To get info only about one site you should set *site_id* in request url.
 
@@ -329,7 +342,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# POST /sites/:site_id/generate_code
+# <a name="generate-code">POST /sites/:site_id/generate_code</a>
 
 Generate new unique identify code for site. As respond returns new generated code. Doesn't change existing code.
 
@@ -376,7 +389,7 @@ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3d
 
 ---
 
-# POST /sites
+# <a name="new-site">POST /sites</a>
 
 Create new site from json data.
 
@@ -471,7 +484,7 @@ The result is json data of the new created object.
 
 ---
 
-# POST /sites/validate_code
+# <a name="validate-code">POST /sites/validate_code</a>
 
 Using this request you can find existing site by code. If site exists request returns site id, otherwise empty string.
 
@@ -531,7 +544,7 @@ The result is id of finded site by code.
 
 ---
 
-# PUT /sites/:site_id
+# <a name="edit-site">PUT /sites/:site_id</a>
 
 Edit info about existing site.
 
@@ -628,7 +641,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id
+# <a name="delete-site">DELETE /sites/:site_id</a>
 
 Delete existing site from system.
 
@@ -699,7 +712,7 @@ The result is json data of the deleted object.
 
 ---
 
-# POST /sites/:site_id/remove
+# <a name="remove-user">POST /sites/:site_id/remove</a>
 
 Remove signed user from setted site. Returns nothing, and disconnects user from site.
 

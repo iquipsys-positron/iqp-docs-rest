@@ -1,4 +1,16 @@
-# GET /sites/:site_id/devices
+Page navigation
+
+* [Get worksite devices](#devices)
+* [Get device info](#device)
+* [Validate device udi](#validate-udi)
+* [Create device](#new-device)
+* [Update device](#edit-device)
+* [Delete device](#delete-device)
+* [Ping device](#ping-device)
+
+---
+
+# <a name="devices">GET /sites/:site_id/devices</a>
 
 Returns json array with data about all devices on specified site.
 
@@ -84,7 +96,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/devices/:device_id
+# <a name="device">GET /sites/:site_id/devices/:device_id</a>
 
 Returns json data about one or all devices on specified site. If you don't set *device_id* result will contain all site devices. To get info only about one device you should set *device_id* in request url.
 
@@ -155,7 +167,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/devices
+# <a name="new-device">POST /sites/:site_id/devices</a>
 
 Create new device from json string for specified site. 
 
@@ -238,7 +250,7 @@ The result is json data of new created object.
 
 ---
 
-# POST /sites/:site_id/devices/validate_udi
+# <a name="validate-udi">POST /sites/:site_id/devices/validate_udi</a>
 
 Return device id for setted udi in request body. If device not found returns empty string.
 
@@ -297,7 +309,7 @@ The result is an id of finded device by udi.
 
 ---
 
-# PUT /sites/:site_id/devices/:device_id
+# <a name="edit-device">PUT /sites/:site_id/devices/:device_id</a>
 
 Edit existing device.
 
@@ -378,7 +390,7 @@ The result is edited object json data.
 
 ---
 
-# DELETE /sites/:site_id/devices/:device_id
+# <a name="delete-device">DELETE /sites/:site_id/devices/:device_id</a>
 
 Deletes existing device.
 
@@ -439,11 +451,7 @@ The result is data about deleted object.
 
 ---
 
-# TO DO : ping device
-
-# Ping device
-
-### POST /sites/:site_id/devices/:device_id/ping
+# <a name="ping-device">POST /sites/:site_id/devices/:device_id/ping</a>
 
 Ping existing device.
 
@@ -465,12 +473,6 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices/:device_id/pin
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
-- ### Body parameters
-
-| Name | Required | Description | Default value | Examples |
-|------|----------|-------------|---------------|---------|
-| | | | | |
-
 ### Access security 
 
 To execute this request needed site admin or higher roles.
@@ -481,12 +483,6 @@ To execute this request needed site admin or higher roles.
  POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/6f5d31e2fcda4385a724cf34b7584437/ping
 `
 
-### Example response
-
-```
-
-```
-
 ### Response explanation
 
-The result is data about ping device.
+If no errors received the ping is successfull.

@@ -1,4 +1,14 @@
-# GET /sites/:site_id/locations
+Page navigation
+
+* [Get worksite locations](#locations)
+* [Get location info](#location)
+* [Create location](#new-location)
+* [Update location](#edit-location)
+* [Delete location](#delete-location)
+
+---
+
+# <a name="locations">GET /sites/:site_id/locations</a>
 
 Returns json array with data about all locations on specified site.
 
@@ -81,7 +91,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/locations/:location_id
+# <a name="location">GET /sites/:site_id/locations/:location_id</a>
 
 Returns json data about one or all location on specified site. If you don't set *location_id* result will contain all site locations. To get info only about one location you should set *location_id* in request url.
 
@@ -149,7 +159,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/locations
+# <a name="new-location">POST /sites/:site_id/locations</a>
 
 Create new location from json string for specified site. 
 
@@ -227,7 +237,7 @@ The result is json data of new created object.
 
 ---
 
-# PUT /sites/:site_id/locations/:location_id
+# <a name="edit-location">PUT /sites/:site_id/locations/:location_id</a>
 
 Edit existing location.
 
@@ -311,7 +321,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/locations/:location_id
+# <a name="delete-location">DELETE /sites/:site_id/locations/:location_id</a>
 
 Deletes existing location.
 

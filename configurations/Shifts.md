@@ -1,4 +1,14 @@
-# GET /sites/:site_id/shifts
+Page navigation
+
+* [Get worksite shifts](#shifts)
+* [Get shift info](#shift)
+* [Create shift](#new-shift)
+* [Update shift](#edit-shift)
+* [Delete shift](#delete-shift)
+
+---
+
+# <a name="shifts">GET /sites/:site_id/shifts</a>
 
 Returns json array with data about all shifts on specified site.
 
@@ -82,7 +92,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/shifts/:shift_id
+# <a name="shift">GET /sites/:site_id/shifts/:shift_id</a>
 
 Returns json data about one or all shifts on specified site. If you don't set *shift_id* result will contain all site shifts. To get info only about one shift you should set *shift_id* in request url.
 
@@ -147,7 +157,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/shifts
+# <a name="new-shift">POST /sites/:site_id/shifts</a>
 
 Create new shift from json string for specified site. 
 
@@ -224,7 +234,7 @@ The result is json data of the new created object.
 
 ---
 
-# PUT /sites/:site_id/shifts/:shift_id
+# <a name="edit-shift">PUT /sites/:site_id/shifts/:shift_id</a>
 
 Edit existing shift.
 
@@ -300,7 +310,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/shifts/:shift_id
+# <a name="delete-shift">DELETE /sites/:site_id/shifts/:shift_id</a>
 
 Deletes existing shift.
 

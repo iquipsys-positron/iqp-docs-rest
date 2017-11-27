@@ -1,6 +1,14 @@
-# Get site emergecy plans
+Page navigation
 
-### GET /sites/:site_id/emergency_plans
+* [Get worksite emergency plans](#emergency-plans)
+* [Get emergency plan info](#emergency-plan)
+* [Create emergency plan](#new-emergency-plan)
+* [Update emergency plan](#edit-emergency-plan)
+* [Delete emergency plan](#delete-emergency-plan)
+
+---
+
+# <a name="emergency-plans">GET /sites/:site_id/emergency_plans</a>
 
 Returns json array with data about all emergecy plans on specified site.
 
@@ -115,7 +123,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/emergency_plans/:plan_id
+# <a name="get-emergency-plan">GET /sites/:site_id/emergency_plans/:plan_id</a>
 
 Returns json data about one or all emergecy plan on specified site. If you don't set *plan_id* result will contain all site emergecy plans. To get info only about one emergecy plan you should set *plan_id* in request url.
 
@@ -198,7 +206,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/emergency_plans
+# <a name="new-emergency-plan">POST /sites/:site_id/emergency_plans</a>
 
 Create new emergecy plan from json string for specified site. 
 
@@ -355,7 +363,7 @@ The result is json data of new created object.
 
 ---
 
-# PUT /sites/:site_id/emergency_plans/:plan_id
+# <a name="edit-emergency-plan">PUT /sites/:site_id/emergency_plans/:plan_id</a>
 
 Edit existing emergecy plan.
 
@@ -502,7 +510,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/emergency_plans/:plan_id
+# <a name="delete-emergency-plan">DELETE /sites/:site_id/emergency_plans/:plan_id</a>
 
 Deletes existing emergecy plan.
 

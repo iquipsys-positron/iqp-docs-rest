@@ -1,4 +1,15 @@
-# GET /sites/:site_id/incidents
+Page navigation
+
+* [Get worksite all incidents](#incidents)
+* [Get worksite incident](#incident)
+* [Create incident](#new-incident)
+* [Update incidents](#edit-incidents)
+* [Delete incident](#delete-incident)
+
+---
+
+
+# <a name="incidents">GET /sites/:site_id/incidents</a>
 
 Returns json array with data about all incidents on specified site.
 
@@ -96,7 +107,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/incidents/:incident_id
+# <a name="incident">GET /sites/:site_id/incidents/:incident_id</a>
 
 Returns json data about one or all incident on specified site. If you don't set *incident_id* result will contain all site incidents. To get info only about one incident you should set *incident_id* in request url.
 
@@ -190,7 +201,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/incidents
+# <a name="new-incident">POST /sites/:site_id/incidents</a>
 
 Create new incident from json string for specified site. 
 
@@ -301,7 +312,7 @@ The result is json data of the new created incident.
 
 ---
 
-# PUT /sites/:site_id/incidents/:incident_id
+# <a name="edit-incident">PUT /sites/:site_id/incidents/:incident_id</a>
 
 Edit existing incident.
 
@@ -403,7 +414,7 @@ The result is json data of the edited incident.
 
 ---
 
-# DELETE /sites/:site_id/incidents/:incident_id
+# <a name="delete-incident">DELETE /sites/:site_id/incidents/:incident_id</a>
 
 Deletes existing incident.
 

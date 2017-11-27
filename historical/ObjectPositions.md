@@ -1,4 +1,14 @@
-# GET /sites/:site_id/object_positions
+Page navigation
+
+* [Get worksite object positions](#object-positions)
+* [Get worksite object positions count](#object-position-count)
+* [Create object positions](#new-object-position)
+* [Create multiple object positions](#new-object-positions)
+* [Delete object position](#delete-object-position)
+
+---
+
+# <a name="object-positions">GET /sites/:site_id/object_positions</a>
 
 Returns json data about worksite all object positions.
 
@@ -94,7 +104,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/object_positions/count
+# <a name="object-position-count">GET /sites/:site_id/object_positions/count</a>
 
 Returns count of all object_positions on worksite.
 
@@ -144,7 +154,7 @@ The result quantity of worksite object positions.
 
 ---
 
-# POST /sites/:site_id/object_positions
+# <a name="new-object-position">POST /sites/:site_id/object_positions</a>
 
 Create new object position from json string for specified site. 
 
@@ -231,7 +241,7 @@ No content
 
 ---
 
-# POST /sites/:site_id/object_positions/batch
+# <a name="new-object-positions">POST /sites/:site_id/object_positions/batch</a>
 
 Batch insert for object positions from json string for specified site. Create multple object positions at one request for sended array of object positions.
 
@@ -343,7 +353,7 @@ No content
 
 ---
 
-# DELETE /sites/:site_id/object_positions
+# <a name="delete-object-position">DELETE /sites/:site_id/object_positions</a>
 
 Delete all object positions on specified worksite.
 

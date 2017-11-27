@@ -1,4 +1,14 @@
-# GET /sites/:site_id/attendance
+Page navigation
+
+* [Get worksite attendances](#attendances)
+* [Get worksite attendance within time](#attendance-wtime)
+* [Create attendance](#new-attendance)
+* [Create multiple attendances](#new-attendances)
+* [Delete attendance](#delete-attendance)
+
+---
+
+# <a name="attendances">GET /sites/:site_id/attendance</a>
 
 Returns json data about worksite all attendances.
 
@@ -91,7 +101,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/attendance/within_time
+# <a name="attendance-wtime">GET /sites/:site_id/attendance/within_time</a>
 
 Returns json data about worksite within time attendances.
 
@@ -153,7 +163,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/attendance
+# <a name="new-attendance">POST /sites/:site_id/attendance</a>
 
 Create new attendance from json string for specified site. 
 
@@ -230,7 +240,7 @@ No content
 
 ---
 
-# POST /sites/:site_id/attendance/batch
+# <a name="new-attendances">POST /sites/:site_id/attendance/batch</a>
 
 Batch insert for attendances from json string for specified site. Create multple attendances at one request for sended array of attendances.
 
@@ -327,7 +337,7 @@ No content
 
 ---
 
-# DELETE /sites/:site_id/attendance
+# <a name="delete-attendance">DELETE /sites/:site_id/attendance</a>
 
 Delete all attendances on specified worksite.
 

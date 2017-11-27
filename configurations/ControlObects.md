@@ -1,4 +1,14 @@
-# GET /sites/:site_id/control_objects
+Page navigation
+
+* [Get worksite control objects](#control-objects)
+* [Get control object info](#control-object)
+* [Create control object](#new-control-object)
+* [Update control object](#edit-control-object)
+* [Delete control object](#delete-control-object)
+
+---
+
+# <a name="control-objects">GET /sites/:site_id/control_objects</a>
 
 Returns json array with data about all control objects on specified site.
 
@@ -90,7 +100,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/control_objects/:object_id
+# <a name="control-object">GET /sites/:site_id/control_objects/:object_id</a>
 
 Returns json data about one or all control object on specified site. If you don't set *object_id* result will contain all site control objects. To get info only about one control object you should set *object_id* in request url.
 
@@ -164,7 +174,7 @@ The request result is an object with following structure
 
 ---
 
-# POST /sites/:site_id/control_objects
+# <a name="new-control-object">POST /sites/:site_id/control_objects</a>
 
 Create new control object from json string for specified site. 
 
@@ -246,7 +256,7 @@ The result is json data of new created object.
 
 ---
 
-# PUT /sites/:site_id/control_objects/:object_id
+# <a name="edit-control-object">PUT /sites/:site_id/control_objects/:object_id</a>
 
 Edit existing control object.
 
@@ -328,7 +338,7 @@ The result is edited object json data.
 
 ---
 
-# DELETE /sites/:site_id/control_objects/:object_id
+# <a name="delete-control-object">DELETE /sites/:site_id/control_objects/:object_id</a>
 
 Deletes existing control object.
 

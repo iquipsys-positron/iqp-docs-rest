@@ -1,4 +1,15 @@
-# GET /sites/:site_id/beacons
+Page navigation
+
+* [Get worksite beacons](#beacons)
+* [Get beacon info](#beacon)
+* [Calculate position](#calc-position)
+* [Create beacon](#new-beacon)
+* [Update beacon](#edit-beacon)
+* [Delete beacon](#delete-beacon)
+
+---
+
+# <a name="beacons">GET /sites/:site_id/beacons</a>
 
 Returns json array with data about all beacons on specified site.
 
@@ -66,7 +77,7 @@ The request result is an array of objects with following structure
 
 ---
 
-# GET /sites/:site_id/beacons/:beacon_id
+# <a name="beacon">GET /sites/:site_id/beacons/:beacon_id</a>
 
 Returns json data about one or all beacons on specified site. If you don't set *beacon_id* result will contain all site beacons. To get info only about one beacon you should set *beacon_id* in request url.
 
@@ -130,7 +141,7 @@ The request result is an object with following structure
 
 ---
 
-# TO DO : POST /sites/:site_id/beacons/calculate_position
+# TO DO : <a name="calc-position">POST /sites/:site_id/beacons/calculate_position</a>
 
 Calculates object position by data from beacons
 
@@ -197,7 +208,7 @@ The request result is an object position.
 
 ---
 
-# POST /sites/:site_id/beacons
+# <a name="new-beacon">POST /sites/:site_id/beacons</a>
 
 Create new beacon from json string for specified site. 
 
@@ -272,7 +283,7 @@ The result is json data of new created object.
 
 ---
 
-# PUT /sites/:site_id/beacons/:beacon_id
+# <a name="edit-beacon">PUT /sites/:site_id/beacons/:beacon_id</a>
 
 Edit existing beacon.
 
@@ -346,7 +357,7 @@ The result is json data of the edited object.
 
 ---
 
-# DELETE /sites/:site_id/beacons/:beacon_id
+# <a name="delete-beacon">DELETE /sites/:site_id/beacons/:beacon_id</a>
 
 Deletes existing beacon.
 
