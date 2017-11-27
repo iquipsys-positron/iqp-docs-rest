@@ -123,7 +123,7 @@ The request result is an array of objects with following structure
 
 | Name | Description | 
 |------|----------|
-| time | Time of the creation manual correction Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
+| time | Time of the creation manual correction. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
 | object_id | Id of the related with correction object. Object ids can be retrieved from */sites/:site_id/control_objects/* |
 | site_id | Correction site id. These IDs can be retrieved from */sites.* |
 | status | Status of the manual correction can take three values - *requested* for new corrections, *rejected*  for rejected correction and *approved* for approved corrections |

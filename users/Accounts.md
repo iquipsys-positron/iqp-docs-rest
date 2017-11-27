@@ -88,11 +88,11 @@ The request result is an array of objects with following structure
 | Name | Description | 
 |------|----------|
 | name | Name of the user account |
-| login | User account login, ussualy equals to email
+| login | User account login, ussualy equals to email |
 | language | User interface language |
 | theme | User interface theme. Theme can be default or accent |
 | time_zone | User time zone |
-| create_time | Time when account has been created |
+| create_time | Time when account has been created. Stores in format yyyy-MM-ddTHH:mm:ss.fffZ |
 | active | Variable to store is account active |
 | id | Account id |
 
@@ -152,7 +152,7 @@ The request result is an object with following structure
 | Name | Description | 
 |------|----------|
 | name | Name of the user account |
-| login | User account login, ussualy equals to email
+| login | User account login, ussualy equals to email |
 | language | User interface language |
 | theme | User interface theme. Theme can be default or accent |
 | time_zone | User time zone |
@@ -222,7 +222,7 @@ The request result is an array of objects with following structure
 | Name | Description | 
 |------|----------|
 | name | Name of the user account |
-| login | User account login, ussualy equals to email
+| login | User account login, ussualy equals to email |
 | language | User interface language |
 | theme | User interface theme. Theme can be default or accent |
 | time_zone | User time zone |
