@@ -2,6 +2,7 @@ Page navigation
 
 * [Get worksite object positions](#object-positions)
 * [Get worksite object positions count](#object-position-count)
+* [Get worksite object positions with parameters count](#object-position-params-count)
 * [Create object positions](#new-object-position)
 * [Create multiple object positions](#new-object-positions)
 * [Delete object position](#delete-object-position)
@@ -151,6 +152,64 @@ To execute this request needed site user or higher roles.
 ### Response explanation
 
 The result quantity of worksite object positions.
+
+---
+
+# <a name="object-position-params-count">POST /sites/:site_id/object_positions/count</a>
+
+Returns count of  object positions in time interval for selected objects.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/count
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| site_id | Yes | Object positions site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+
+### URL parameters 
+
+| Name | Description | Examples |
+|------|-------------|----------|
+| from_time | Time of the start selected time interval. Stored in datetime format yyyy-MM-ddTHH:mm:ss.fffZ |
+| to_time | Time of the end selected time interval. Stored in datetime format yyyy-MM-ddTHH:mm:ss.fffZ |
+| object_ids | Selected object ids, separeted by coma. These ids can be retreived from */sites/:site_id/control_objects* |
+
+### Access security 
+
+To execute this request needed site user or higher roles.
+
+### Example Request
+
+`
+ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/count?from_time=2017-11-27T11:56:00.000Z&object_ids=841abccea54d47bd87b04195764a859b,2ff6d17cec174c0eafc81d6cdad95630&to_time=2017-11-27T12:12:00.000Z
+`
+
+### Example response
+
+```
+355
+```
+
+### Response explanation
+
+The result quantity of worksite object positions for selected objects and time interval.
 
 ---
 
