@@ -76,6 +76,7 @@ The request result is an array of objects with following structure
 | device_id | Id of the device for signal. Device ids can be retrieved from */sites/:site_id/devices/* |
 | type | Signal type can be *0* - none, *1* - attention, *2* - confirmation, *3* - warning, *4* - emergency |
 | sent | Boolean value to store if signal is sended to device |
+| lock_until | This variable is flag of temporary object lock, to exlude signal double processing. |
 | id |  Inuque identifier of the signal |
 
 ---
@@ -112,6 +113,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/signals
 | device_id | Yes | Id of the device for signal. Device ids can be retrieved from */sites/:site_id/devices/* | | e17172ad05d448d18450aca6f6fff653 |
 | type | Yes | Signal type can be *0* - none, *1* - attention, *2* - confirmation, *3* - warning, *4* - emergency | | 1 |
 | sent | Yes | Boolean value to store if signal is sended to device | | false |
+| lock_until | No | This variable is flag of temporary object lock, to exlude signal double processing. | 0 |
 
 ### Access security 
 
