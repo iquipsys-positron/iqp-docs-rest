@@ -12,7 +12,6 @@ Page navigation
 
 ---
 
-
 # <a name="signup">POST /signup</a>
 
 Sign up to system. These request used for registration new user
@@ -430,7 +429,7 @@ The request result is an array of objects with following structure
 
 # <a name="session">GET /sessions/current</a>
 
-Returns json array with data about current sessions.
+Returns json array with data about current session.
 
 ### Request URL
 
@@ -490,7 +489,7 @@ To execute this request needed to be signed in system.
 
 ### Response explanation
 
-The request result is an array of objects with following structure
+The request result is of object with following structure
 
 | Name | Description | 
 |------|----------|
@@ -628,7 +627,7 @@ http://tracker.pipservices.net:8080/api/v1/sessions/restore
 
 ### Access security 
 
-To execuce this request neede to be signed to system.
+To execuce this request needed to be signed to system.
 
 ### Example Request
 
