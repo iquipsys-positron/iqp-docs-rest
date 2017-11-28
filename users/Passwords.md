@@ -142,6 +142,12 @@ http://tracker.pipservices.net:8080/api/v1/passwords/:user_id/change
 |----|----|----|
 | x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| user_id | Yes | User account id. These IDs can be retrieved from */accounts.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+
 ### Body parameters
 
 | Name | Required | Description | Default value | Examples |
