@@ -4,7 +4,6 @@ Page navigation
 * [Get current activity](#activity)
 * [Get activity by id](#new-activity)
 
-
 ---
 
 # <a name="activities">GET /activities</a>
@@ -22,7 +21,7 @@ http://tracker.pipservices.net:8080/api/v1/activities
 | Property | Value |
 |----|----|
 | Response formats | JSON |
-| Requires authentication | YES |
+| Requires authentication | Yes |
 
 - ### Required headers
 | Header name | Description | Example |
@@ -122,7 +121,7 @@ http://tracker.pipservices.net:8080/api/v1/activities/:party_id
 | Property | Value |
 |----|----|
 | Response formats | JSON |
-| Requires authentication | YES |
+| Requires authentication | Yes |
 
 - ### Required headers
 | Header name | Description | Example |
@@ -217,14 +216,18 @@ http://tracker.pipservices.net:8080/api/v1/activities
 | Property | Value |
 |----|----|
 | Response formats | JSON |
-| Requires authentication | No |
+| Requires authentication | Yes |
 | Requires body | Yes |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
 
 ### Body parameters
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-
 | type | Type of the activity describes what action was perform. Can take next values *account created*, *account changed*, *account deleted*, *sign in* |
 | party | Object which describes who made the activity. For users property *type* has value account, *id* is account id, *name* is account name |
 | ref_parents | Array of ids references to accounts parent for activity |
