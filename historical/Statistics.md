@@ -4,7 +4,7 @@ Statistics for system administator
 
 * [Get all counters](#counters)
 * [Get all groups](#groups)
-* [?Post statistics](#)
+* [Get all statistics values](#all-statistics-adm)
 * [Get any worksite statistics](#statistics-adm)
 * [Get any worksite statistics by name](#statistics-name-adm)
 * [?Edit any statistics](#edit-statistics-adm)
@@ -162,6 +162,79 @@ To execute this request needed system administator role.
 ### Response explanation
 
 The request result is an array of string site ids.
+
+---
+
+# <a name="all-statistics-adm">POST /statistics</a>
+
+Returns json data with all statistics values.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/statistics
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | Yes |
+| Requires body | Yes |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+### Body Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| group | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+
+### Access security 
+
+To execute this request needed system administrator role.
+
+### Example Request
+
+`
+ GET http://tracker.pipservices.net:8080/api/v1/statistics
+`
+
+### Example response
+
+```
+[
+{
+	"type": 0,
+	"values": [
+	{
+		"value": 34
+	},
+	{
+		"value": 269.402
+	},
+	{
+		"value": 1128860.0309999948
+	},
+	{
+		"value": 205
+	},
+	{
+		"value": 25879.52299999998
+	},
+	...
+},
+...
+]
+```
+
+### Response explanation
+
+The request result is an array of objects with statistic values.
 
 ---
 

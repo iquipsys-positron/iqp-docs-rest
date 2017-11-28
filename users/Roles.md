@@ -90,6 +90,7 @@ http://tracker.pipservices.net:8080/api/v1/roles/:user_id/grant
 |----|----|
 | Response formats | JSON |
 | Requires authentication | YES |
+| Requires body | Yes |
 
 - ### Required headers
 | Header name | Description | Example |
@@ -151,6 +152,7 @@ http://tracker.pipservices.net:8080/api/v1/roles/:user_id/revoke
 |----|----|
 | Response formats | JSON |
 | Requires authentication | YES |
+| Requires body | Yes |
 
 - ### Required headers
 | Header name | Description | Example |
