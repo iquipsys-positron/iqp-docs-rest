@@ -1,20 +1,20 @@
 Page navigation
 
-* [Resend verification email](#resend-email_settings)
-* [Verify user email](#verify-email_settings)
-* [Get user email settings](#email_settings)
-* [Update user email settings](#edit-email_settings)
+* [Resend verification sms](#resend-sms_settings)
+* [Verify user sms](#verify-sms_settings)
+* [Get user sms settings](#sms_settings)
+* [Update user sms settings](#edit-sms_settings)
 
 ---
 
-# <a name="resend-email_setting">POST /email_settings/resend</a>
+# <a name="resend-sms_setting">POST /sms_settings/resend</a>
 
-Resend email with verification code for verify account email.
+Resend sms with verification code for verify account phone number.
 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/resend
+http://tracker.pipservices.net:8080/api/v1/sms_settings/resend
 `
 
 ### Request Information
@@ -29,7 +29,7 @@ http://tracker.pipservices.net:8080/api/v1/email_settings/resend
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| login | Yes | Login of the existing account to resend verification email. On this email will be sended message with verification code. | | user@gmail.com |
+| phone | Yes | User phone number in form E.123 international +7 AAA BBB BB BB. | | +380508308403 |
 
 
 ### Access security 
@@ -39,14 +39,14 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/email_settings/resend
+ POST http://tracker.pipservices.net:8080/api/v1/sms_settings/resend
 `
 
 ### Example Body
 
 ```
 {
-    "login":"user@gmail.com"
+	"phone": "+380508308443"
 }
 ```
 
@@ -58,18 +58,18 @@ Anybody can execute this request.
 
 ### Response explanation
 
-The request result is 204 when request successfully executed. Also on account email sends message with verification code.
+The request result is 204 when request successfully executed. Also on account phone number sends message with verification code.
 
 ---
 
-# <a name="verify-email_settings">POST /email_settings/verify</a>
+# <a name="verify-sms_settings">POST /sms_settings/verify</a>
 
-Verify user account by verification code received on email.
+Verify user account by verification code received from sms.
 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/verify
+http://tracker.pipservices.net:8080/api/v1/sms_settings/verify
 `
 
 ### Request Information
@@ -84,8 +84,8 @@ http://tracker.pipservices.net:8080/api/v1/email_settings/verify
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| login | Yes | User login of the existing account. Logins can be retreived from */accounts* | | user@gmail.com |
-| code | Yes | Verification code, can be received on email after */email_settingss/resend* request| | 175913162 |
+| phone | Yes | User phone number in form E.123 international +7 AAA BBB BB BB. | | +380508308403 |
+| code | Yes | Verification code, can be received from sms after */sms_settingss/resend* request| | 175913162 |
 
 ### Access security 
 
@@ -94,14 +94,14 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/email_settings/verify
+ POST http://tracker.pipservices.net:8080/api/v1/sms_settings/verify
 `
 
 ### Example Body
 
 ```
 {
-    "login":"krdima92@gmail.com",
+    "phone": "+380508308443",
     "code":"175913163"
 }
 ```
@@ -114,18 +114,18 @@ Anybody can execute this request.
 
 ### Response explanation
 
-The request result is 204 when request successfully executed it means that account email was verified.
+The request result is 204 when request successfully executed it means that account phone number was verified.
 
 ---
 
-# <a name="email_settings">GET /email_settings/:user_id</a>
+# <a name="sms_settings">GET /sms_settings/:user_id</a>
 
-Returns json array with data about user email settings.
+Returns json array with data about user sms settings.
 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/:user_id
+http://tracker.pipservices.net:8080/api/v1/sms_settings/:user_id
 `
 
 ### Request Information
@@ -153,17 +153,15 @@ To execute this request needed system administator rules or use own user_id.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/email_settings/cd65c2023be34e84b2e9529264d17d21
+ GET http://tracker.pipservices.net:8080/api/v1/sms_settings/cd65c2023be34e84b2e9529264d17d21
 `
 
 ### Example response
 
 ```
 {
-	"name": "Dmitriy Krainiy",
-	"email": "krdima92@gmail.com",
-	"language": null,
-	"verified": true,
+	"phone": "+380508308403",
+	"verified": false,
 	"id": "cd65c2023be34e84b2e9529264d17d21"
 }
 ```
@@ -174,22 +172,20 @@ The request result is an object with following structure
 
 | Name | Description | 
 |------|-------------|
-| name | User account name |
-| email | User account email |
-| language | Language for email to user. Default value is english, can be null. |
-| verified | Boolean variable to store is user email was verified |
+| phone | User phone number in form E.123 international	+7 AAA BBB BB BB. |
+| verified | Boolean variable to store is user sms was verified |
 | id | User account id |
 
 ---
 
-# <a name="edit-email_settings">PUT /email_settings/:user_id</a>
+# <a name="edit-sms_settings">PUT /sms_settings/:user_id</a>
 
-Edit existing user email settings.
+Edit existing user sms settings.
 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/:user_id
+http://tracker.pipservices.net:8080/api/v1/sms_settings/:user_id
 `
 
 ### Request Information
@@ -204,12 +200,9 @@ http://tracker.pipservices.net:8080/api/v1/email_settings/:user_id
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| name | No | User account name | | User 1 |
-| email | Yes | User account email | | user@gmail.com |
-| language | No | Language for email to user. Default value is english, can be null. | | ут |
+| phone | Yes | User phone number in form E.123 international +7 AAA BBB BB BB. | | +380508308403 |
 | verified | No | Boolean variable to store is user email was verified | | true, false |
-| id | Yes | User account id | | cd65c2023be34e84b2e9529264d17d21 |
-
+| id | No | User account id. This id can be retreived from */accounts* | | cd65c2023be34e84b2e9529264d17d21 |
 
 - ### Required headers
 | Header name | Description | Example |
@@ -229,7 +222,7 @@ To execute this request needed system administator rules or use own user_id.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/email_settings/cd65c2023be34e84b2e9529264d17d21
+ PUT http://tracker.pipservices.net:8080/api/v1/sms_settings/cd65c2023be34e84b2e9529264d17d21
 `
 
 
@@ -237,9 +230,7 @@ To execute this request needed system administator rules or use own user_id.
 
 ```
 {
-	"email": "krdima92@gmail.com",
-	"language": "en",
-	"id": "cd65c2023be34e84b2e9529264d17d21"
+	"phone": "+380508308443"
 }
 ```
 
@@ -247,12 +238,10 @@ To execute this request needed system administator rules or use own user_id.
 
 ```
 {
-	"name": "Dmitriy Krainiy",
-	"email": "krdima92@gmail.com",
-	"language": "en",
-	"ver_code": null,
-	"ver_expire_time": null,
-	"verified": true,
+	"phone": "+380508308443",
+	"ver_code": "888906187",
+	"ver_expire_time": "2017-11-29T07:09:21.115Z",
+	"verified": false,
 	"id": "cd65c2023be34e84b2e9529264d17d21"
 }
 ```
@@ -263,10 +252,8 @@ The request result is an object with following structure
 
 | Name | Description | 
 |------|-------------|
-| name | User account name |
-| email | User account email |
-| language | Language for email to user. Default value is english, can be null. |
-| verified | Boolean variable to store is user email was verified |
-| ver_code | Code for verification email, if account email verified - this variable is null |
-| ver_expire_time | Time when verification code expires, if account email verified - this variable is null |
+| phone | User phone number in form E.123 international	+7 AAA BBB BB BB. |
+| verified | Boolean variable to store is user sms was verified |
+| ver_code | Code for verification phone number, if account phone number verified - this variable is null |
+| ver_expire_time | Time when verification code expires, if account sms verified - this variable is null |
 | id | User account id |
