@@ -7,13 +7,13 @@ Statistics for system administator
 * [Get all statistics values](#all-statistics-adm)
 * [Get any worksite statistics](#statistics-adm)
 * [Get any worksite statistics by name](#statistics-name-adm)
-* [?Edit any statistics](#edit-statistics-adm)
+* [Increment any worksite statistics value](#edit-statistics-adm)
 
 Statistics for worksite account
 
 * [Get worksite statistics](#statistics)
 * [Get worksite statistics by name](#statistics-name)
-* [?Edit statistics](#edit-statistics)
+* [Increment statistics value](#edit-statistics)
 
 ---
 
@@ -430,6 +430,64 @@ The request result is an array of objects with following structure
 
 ---
 
+# <a name="edit-statistics-name">POST /statistics/:group/:name</a>
+
+Increments value for existing counter and creates new values for unexisting counter.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/statistics/:group/:name
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+| Requires body | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| group | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| name | Yes | Statistic counter contains from three part *params.<object_id>.<param_name>. Set object_id for get data for only one object, to get statistics for all objects set value to **all**. *param_name* is a name of received parameter - *online*, *immobile*, *distance*, *speed*. To receive state updates statistics and errors while updating you need to use *state_update.<device_id>* and *state_errors.<device_id>*. Instead of device_id you can use *all* for all devices statistics. | | presence.36929eb1ee404aaa9de3114033c51386.338c32dee6a04c468a479330ad1d7acf |
+
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example body
+```
+{
+	"value": 123
+}
+```
+
+### Example Request
+```
+ POST http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e/statistics/params.all.distance
+```
+
+### Example response
+
+```
+204 No content
+```
+
+### Response explanation
+
+Request return nothing on success, but increments existing counter value by sended value, if counter doesn't exist - it will create counter with selected value.
+
+---
+
 # <a name="statistics">GET /sites/:group/statistics</a>
 
 Returns json data about worksite all statistics. The statistic store values for parameters such as presence, immobile, average speed and distance for objects by hours, days and monthes. 
@@ -622,4 +680,58 @@ The request result is an array of objects with following structure
 
 ---
 
-# TO DO: <a name="editstatistics">POST /sites/:grop/statistics/:name</a>
+# <a name="edit-statistics-name">POST /sites/:group/statistics/:name</a>
+
+Increments value for existing counters and creates new values for unexisting counters.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics/:name
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+| Requires body | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| group | Yes | Site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+| name | Yes | Statistic counter contains from three part *params.<object_id>.<param_name>. Set object_id for get data for only one object, to get statistics for all objects set value to **all**. *param_name* is a name of received parameter - *online*, *immobile*, *distance*, *speed*. To receive state updates statistics and errors while updating you need to use *state_update.<device_id>* and *state_errors.<device_id>*. Instead of device_id you can use *all* for all devices statistics. | | presence.36929eb1ee404aaa9de3114033c51386.338c32dee6a04c468a479330ad1d7acf |
+
+### Access security 
+
+To execute this request needed site admin or higher roles.
+
+### Example body
+```
+{
+	"value": 123
+}
+```
+
+### Example Request
+```
+ POST http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e/statistics/params.all.distance
+```
+
+### Example response
+
+```
+204 No content
+```
+
+### Response explanation
+
+Request return nothing on success, but increments existing counter value by sended value, if counter doesn't exist - it will create counter with selected value.
