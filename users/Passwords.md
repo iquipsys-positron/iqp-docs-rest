@@ -83,7 +83,7 @@ http://tracker.pipservices.net:8080/api/v1/passwords/reset
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| login | Yes | User login of the existing account. Logins can be retreived from */accounts* | | user@gmail.com |
+| login | Yes | User login of the existing account. Logins can be retrieved from */accounts* | | user@gmail.com |
 | code | Yes | Password recovery code, received on email after execution */passwords/recover* request| | 175913162 |
 | password | Yes | User new password. Minimum 6 symbols | | 123321 |
 
@@ -152,10 +152,10 @@ http://tracker.pipservices.net:8080/api/v1/passwords/:user_id/change
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| login | Yes | User login of the existing account. Logins can be retreived from */accounts* | | user@gmail.com |
+| login | Yes | User login of the existing account. Logins can be retrieved from */accounts* | | user@gmail.com |
 | old_password | Yes | User current password. Minimum 6 symbols | | 123123 |
 | new_password | Yes | User new password. Minimum 6 symbols | | 123321 |
-| user_id | Yes | Id of the user for changing password. User id can be retreived from */accounts* | | cd65c2023be34e84b2e9529264d17d21 |
+| user_id | Yes | Id of the user for changing password. User id can be retrieved from */accounts* | | cd65c2023be34e84b2e9529264d17d21 |
 
 ### Access security 
 

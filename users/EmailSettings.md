@@ -84,7 +84,7 @@ http://tracker.pipservices.net:8080/api/v1/email_settings/verify
 
 | Name | Required | Description | Default value | Examples |
 |------|----------|-------------|---------------|---------|
-| login | Yes | User login of the existing account. Logins can be retreived from */accounts* | | user@gmail.com |
+| login | Yes | User login of the existing account. Logins can be retrieved from */accounts* | | user@gmail.com |
 | code | Yes | Verification code, can be received on email after */email_settingss/resend* request| | 175913162 |
 
 ### Access security 

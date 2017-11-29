@@ -189,7 +189,7 @@ http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/count
 |------|-------------|----------|
 | from_time | Time of the start selected time interval. Stored in datetime format yyyy-MM-ddTHH:mm:ss.fffZ |
 | to_time | Time of the end selected time interval. Stored in datetime format yyyy-MM-ddTHH:mm:ss.fffZ |
-| object_ids | Selected object ids, separeted by coma. These ids can be retreived from */sites/:site_id/control_objects* |
+| object_ids | Selected object ids, separeted by coma. These ids can be retrieved from */sites/:site_id/control_objects* |
 
 ### Access security 
 

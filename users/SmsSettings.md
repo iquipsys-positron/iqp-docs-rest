@@ -202,7 +202,7 @@ http://tracker.pipservices.net:8080/api/v1/sms_settings/:user_id
 |------|----------|-------------|---------------|---------|
 | phone | Yes | User phone number in form E.123 international +7 AAA BBB BB BB. | | +380508308403 |
 | verified | No | Boolean variable to store is user email was verified | | true, false |
-| id | No | User account id. This id can be retreived from */accounts* | | cd65c2023be34e84b2e9529264d17d21 |
+| id | No | User account id. This id can be retrieved from */accounts* | | cd65c2023be34e84b2e9529264d17d21 |
 
 - ### Required headers
 | Header name | Description | Example |

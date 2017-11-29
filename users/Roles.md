@@ -70,7 +70,7 @@ To execute this request needed system administrator role.
 
 ### Response explanation
 
-The request result is an array of user roles. Each role represents as string with next structure "<site_id>:<role>". Site ids can be retreived from */sites/all*, role can take next values: *user*, *manager*, *admin*. For system administator role is admin, without site id.
+The request result is an array of user roles. Each role represents as string with next structure "<site_id>:<role>". Site ids can be retrieved from */sites/all*, role can take next values: *user*, *manager*, *admin*. For system administator role is admin, without site id.
 
 ---
 
@@ -132,7 +132,7 @@ To execute this request needed system administrator role.
 
 ### Response explanation
 
-The request result is an array of user roles. Each role represents as string with next structure "<site_id>:<role>". Site ids can be retreived from */sites/all*, role can take next values: *user*, *manager*, *admin*. For system administator role is admin, without site id.
+The request result is an array of user roles. Each role represents as string with next structure "<site_id>:<role>". Site ids can be retrieved from */sites/all*, role can take next values: *user*, *manager*, *admin*. For system administator role is admin, without site id.
 
 ---
 
@@ -192,4 +192,4 @@ To execute this request needed system administrator role.
 
 ### Response explanation
 
-The request result is an array of user roles. Each role represents as string with next structure "<site_id>:<role>". Site ids can be retreived from */sites/all*, role can take next values: *user*, *manager*, *admin*. For system administator role is admin, without site id.
+The request result is an array of user roles. Each role represents as string with next structure "<site_id>:<role>". Site ids can be retrieved from */sites/all*, role can take next values: *user*, *manager*, *admin*. For system administator role is admin, without site id.

@@ -602,7 +602,7 @@ The request result is an array of objects with following structure
 
 # <a name="restore-session">POST /sessions/restore</a>
 
-Restore expired session by id. Sesion id can be retreived from */sessions*.
+Restore expired session by id. Sesion id can be retrieved from */sessions*.
 
 ### Request URL
 
