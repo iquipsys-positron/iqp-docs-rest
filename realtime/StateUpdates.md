@@ -1,6 +1,72 @@
 Page navigation
 
+* [Update state](#update-state)
 * [Invalidate state](#invalidate-state)
+
+---
+
+# <a name="update-state">POST /sites/:site_id/begin_update_state</a>
+
+Initiate update of the current state, calculates all rules, generates events and logs historical records
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/:site_id/begin_update_state
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+| Requires body | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+- ### Body parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| device_id | Yes | Device id can be retrieved from */sites/:site_id/devices.* | | e0a31d48021e492c8c7d45b17ac36175 |
+
+### Parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| site_id | Yes | invalidate_state site id. These IDs can be retrieved from */sites.*| | 9cfaf79bc95b4a9e912314eb3db7a4ba |
+
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
+
+`
+ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/begin_update_state
+`
+
+### Example Body
+
+```
+{
+	"device_id":"e0a31d48021e492c8c7d45b17ac36175"
+}
+```
+
+### Example response
+
+```
+204 No content
+```
+
+### Response explanation
+
+On successfull request execution result is 204.
 
 ---
 
