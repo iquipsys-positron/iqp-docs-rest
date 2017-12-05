@@ -1,5 +1,27 @@
 # Welcome to the iQuipsys Positron Tracker rest documentation.
 
+Using this documentation you can view and use examples of interaction with system by REST api.
+
+## Usage 
+
+To execute almost all request you have to sign in to system. Example of sign in described in [Sessions](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/users/Sessions.md)
+
+Example of usage rest api with Advanced Rest Client.
+
+1. Sign in to system
+
+
+
+2. Copy session id
+
+
+
+3. Set x-session-id in request headers
+
+
+
+## Navigation
+
 * [About](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/About.md)
 
 * [Beacons](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/configurations/Beacons.md)
