@@ -3,7 +3,7 @@ Page navigation
 * [Get worksite all incidents](#incidents)
 * [Get worksite incident](#incident)
 * [Create incident](#new-incident)
-* [Update incidents](#edit-incidents)
+* [Update incident](#edit-incident)
 * [Delete incident](#delete-incident)
 
 ---
