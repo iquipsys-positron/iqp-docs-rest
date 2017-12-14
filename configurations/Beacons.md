@@ -3,6 +3,7 @@ Page navigation
 * [Get worksite beacons](#beacons)
 * [Get beacon info](#beacon)
 * [Calculate position](#calc-position)
+* [Validate beacon udi](#validate-udi)
 * [Create beacon](#new-beacon)
 * [Update beacon](#edit-beacon)
 * [Delete beacon](#delete-beacon)
@@ -205,6 +206,65 @@ No cotent
 ### Response explanation
 
 The request result is an object position, if object position can't be calculated return empty result.
+
+---
+
+# <a name="validate-udi">POST /sites/:site_id/beacons/validate_udi</a>
+
+Return beacon id for setted udi in request body. If beacon not found returns empty string.
+
+### Request URL
+
+`
+http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons/validate_udi
+`
+
+### Request Information
+
+| Property | Value |
+|----|----|
+| Response formats | JSON |
+| Requires authentication | YES |
+| Requires body | YES |
+
+- ### Required headers
+| Header name | Description | Example |
+|----|----|----|
+| x-session-id | Session id. This id can be retrived from */signin* | f053db945f924dfbbaf3710116acf7cb |
+
+- ### Body parameters
+
+| Name | Required | Description | Default value | Examples |
+|------|----------|-------------|---------------|---------|
+| udi | Yes | Unique beacon identifier | | 001, abc, a1b2c3 |
+
+### Access security 
+
+To execute this request needed site manager or higher roles.
+
+### Example Request
+
+`
+ POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/validate_udi
+`
+
+### Example Body
+
+```
+{
+  "udi": "12345"
+}
+```
+
+### Example response
+
+```
+"4f5378e1a033461bae6b51cb34538d92"
+```
+
+### Response explanation
+
+The result is an id of finded beacon by udi.
 
 ---
 
