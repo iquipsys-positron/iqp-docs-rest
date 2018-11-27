@@ -46,6 +46,7 @@ Example of usage rest api with Advanced Rest Client.
 * [Attendance](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/Attendance.md)
 * [ObjectPositions](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/ObjectPositions.md)
 * [ObjectStates](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/ObjectStates.md)
+* [ObjectData](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/ObjectData.md)
 * [OperationalEvents](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/OperationalEvents.md)
 * [Statistics](https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/historical/Statistics.md)
 
