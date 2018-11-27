@@ -10,16 +10,16 @@ Example of usage rest api with Advanced Rest Client.
 
 1. Sign in to system
 
-<img src="https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/images/sign_in.jpg?raw=true" alt="sign in"> 
+<img src="https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/images/sign_in.png?raw=true" alt="sign in"> 
 
 
 2. Copy session id
 
-<img src="https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/images/sign_in_res.jpg?raw=true" alt="sign in res"> 
+<img src="https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/images/sign_in_res.png?raw=true" alt="sign in res"> 
 
 3. Set x-session-id in request headers
 
-<img src="https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/images/x-session-id.jpg?raw=true" alt="x-session-id"> 
+<img src="https://github.com/iquipsys-positron/iqp-docs-rest/blob/master/images/x-session-id.png?raw=true" alt="x-session-id"> 
 
 ## Navigation
 
