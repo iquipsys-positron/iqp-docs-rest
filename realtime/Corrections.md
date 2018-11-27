@@ -15,7 +15,7 @@ Returns json array with data about all corrections on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/corrections
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections
 `
 
 ### Example response
@@ -142,7 +142,7 @@ Returns json data about one or all correction on specified site. If you don't se
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correction_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/corrections/:correction_id
 `
 
 ### Request Information
@@ -172,7 +172,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/74e99f9a2b224c9a9c0f8303150bed19
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/74e99f9a2b224c9a9c0f8303150bed19
 `
 
 ### Example response
@@ -221,7 +221,7 @@ Creates new correction from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/corrections
 `
 
 ### Request Information
@@ -254,7 +254,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections
 `
 
 ### Example Body
@@ -308,7 +308,7 @@ Edit existing correction.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correction_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/corrections/:correction_id
 `
 
 ### Request Information
@@ -348,7 +348,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/a3a6c6c4339045689ebd6fac9bc4cea1
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/a3a6c6c4339045689ebd6fac9bc4cea1
 `
 
 ### Example Body
@@ -400,7 +400,7 @@ Deletes existing correction.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/corrections/:correction_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/corrections/:correction_id
 `
 
 ### Request Information
@@ -429,7 +429,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/a3a6c6c4339045689ebd6fac9bc4cea1
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/corrections/a3a6c6c4339045689ebd6fac9bc4cea1
 `
 
 ### Example response

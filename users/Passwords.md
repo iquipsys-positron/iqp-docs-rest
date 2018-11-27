@@ -13,7 +13,7 @@ Send email with password recovery code.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/passwords/recover
+http://api.positron.iquipsys.net:30018/api/v1/passwords/recover
 `
 
 ### Request Information
@@ -38,7 +38,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/passwords/recover
+ GET http://api.positron.iquipsys.net:30018/api/v1/passwords/recover
 `
 
 ### Example Body
@@ -68,7 +68,7 @@ Reset user password by recovery code received on email after execution */passwor
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/passwords/reset
+http://api.positron.iquipsys.net:30018/api/v1/passwords/reset
 `
 
 ### Request Information
@@ -94,7 +94,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/passwords/reset
+ GET http://api.positron.iquipsys.net:30018/api/v1/passwords/reset
 `
 
 ### Example Body
@@ -126,7 +126,7 @@ Change user password by user id.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/passwords/:user_id/change
+http://api.positron.iquipsys.net:30018/api/v1/passwords/:user_id/change
 `
 
 ### Request Information
@@ -164,7 +164,7 @@ To execute this request needed system administator rule or use own user_id.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/passwords/cd65c2023be34e84b2e9529264d17d21/change
+ GET http://api.positron.iquipsys.net:30018/api/v1/passwords/cd65c2023be34e84b2e9529264d17d21/change
 `
 
 ### Example Body

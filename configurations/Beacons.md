@@ -17,7 +17,7 @@ Returns json array with data about all beacons on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons
 `
 
 ### Request Information
@@ -46,7 +46,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons
 `
 
 ### Example response
@@ -85,7 +85,7 @@ Returns json data about one or all beacons on specified site. If you don't set *
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons/:beacon_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons/:beacon_id
 `
 
 ### Request Information
@@ -115,7 +115,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/11fdec89d29b481c9c21d2ed050f65fb
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/11fdec89d29b481c9c21d2ed050f65fb
 `
 
 ### Example response
@@ -149,7 +149,7 @@ Calculates object position by data from beacons
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons/calculate_position
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons/calculate_position
 `
 
 ### Request Information
@@ -185,7 +185,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/calculate_position
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/calculate_position
 `
 
 ### Example Body
@@ -216,7 +216,7 @@ Return beacon id for setted udi in request body. If beacon not found returns emp
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons/validate_udi
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons/validate_udi
 `
 
 ### Request Information
@@ -245,7 +245,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/validate_udi
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/validate_udi
 `
 
 ### Example Body
@@ -275,7 +275,7 @@ Create new beacon from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons
 `
 
 ### Request Information
@@ -312,7 +312,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons
 `
 
 ### Example Body
@@ -350,7 +350,7 @@ Edit existing beacon.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons/:beacon_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons/:beacon_id
 `
 
 ### Request Information
@@ -388,7 +388,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/cb1f859233a04b0fb68c8d8f01dca9d2
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/cb1f859233a04b0fb68c8d8f01dca9d2
 `
 
 ### Example Body
@@ -424,7 +424,7 @@ Deletes existing beacon.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/beacons/:beacon_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/beacons/:beacon_id
 `
 
 ### Request Information
@@ -453,7 +453,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/cb1f859233a04b0fb68c8d8f01dca9d2
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/beacons/cb1f859233a04b0fb68c8d8f01dca9d2
 `
 
 ### Example response

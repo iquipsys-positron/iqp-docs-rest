@@ -15,7 +15,7 @@ Returns json array with data about all resolutions on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/resolutions
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions
 `
 
 ### Example response
@@ -97,7 +97,7 @@ Returns json data about one or all resolution on specified site. If you don't se
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolution_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/resolutions/:resolution_id
 `
 
 ### Request Information
@@ -127,7 +127,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/2082036b232840b78d94056a75a15887
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/2082036b232840b78d94056a75a15887
 `
 
 ### Example response
@@ -165,7 +165,7 @@ Create new resolution from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/resolutions
 `
 
 ### Request Information
@@ -203,7 +203,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions
 `
 
 ### Example Body
@@ -246,7 +246,7 @@ Edit existing resolution.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolution_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/resolutions/:resolution_id
 `
 
 ### Request Information
@@ -285,7 +285,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/b1c50f73843342d8809e051bf393faf6
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/b1c50f73843342d8809e051bf393faf6
 `
 
 ### Example Body
@@ -323,7 +323,7 @@ Deletes existing resolution.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/resolutions/:resolution_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/resolutions/:resolution_id
 `
 
 ### Request Information
@@ -352,7 +352,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/b1c50f73843342d8809e051bf393faf6
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/resolutions/b1c50f73843342d8809e051bf393faf6
 `
 
 ### Example response

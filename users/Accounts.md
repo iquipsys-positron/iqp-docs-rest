@@ -16,7 +16,7 @@ Returns json array with data about all accounts.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/accounts
+http://api.positron.iquipsys.net:30018/api/v1/accounts
 `
 
 ### Request Information
@@ -38,7 +38,7 @@ To execute this request needed to be signed in system.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/accounts
+ GET http://api.positron.iquipsys.net:30018/api/v1/accounts
 `
 
 ### Example response
@@ -105,7 +105,7 @@ Returns json array with data about current account.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/accounts/current
+http://api.positron.iquipsys.net:30018/api/v1/accounts/current
 `
 
 ### Request Information
@@ -127,7 +127,7 @@ To execute this request needed to be signed in system.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/accounts/current
+ GET http://api.positron.iquipsys.net:30018/api/v1/accounts/current
 `
 
 ### Example response
@@ -169,7 +169,7 @@ Returns json array with data about user account.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/accounts/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/accounts/:user_id
 `
 
 ### Request Information
@@ -197,7 +197,7 @@ To execute this request needed system administrator role or use own *user_id*.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/accounts/4390c2ae20a8449aac459d6f1a5ac097
+ GET http://api.positron.iquipsys.net:30018/api/v1/accounts/4390c2ae20a8449aac459d6f1a5ac097
 `
 
 ### Example response
@@ -239,7 +239,7 @@ Create new account from json data.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/accounts
+http://api.positron.iquipsys.net:30018/api/v1/accounts
 `
 
 ### Request Information
@@ -270,7 +270,7 @@ To execuce this request needed to have system administator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/accounts
+ GET http://api.positron.iquipsys.net:30018/api/v1/accounts
 `
 
 ### Example Body
@@ -316,7 +316,7 @@ Edites existing account.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/accounts/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/accounts/:user_id
 `
 
 ### Request Information
@@ -353,7 +353,7 @@ To execuce this request needed to have system administator role or use own *user
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/accounts/662635fab7dc4e1c8d888e9d300e9b3a
+ GET http://api.positron.iquipsys.net:30018/api/v1/accounts/662635fab7dc4e1c8d888e9d300e9b3a
 `
 
 ### Example Body
@@ -394,7 +394,7 @@ Delete existing account.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/accounts/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/accounts/:user_id
 `
 
 ### Request Information
@@ -422,7 +422,7 @@ To execute this request needed to be system administator or use own *user_id*.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/accounts/662635fab7dc4e1c8d888e9d300e9b3a
+ GET http://api.positron.iquipsys.net:30018/api/v1/accounts/662635fab7dc4e1c8d888e9d300e9b3a
 `
 
 ### Example response

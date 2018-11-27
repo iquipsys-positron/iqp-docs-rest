@@ -15,7 +15,7 @@ Returns json array with data about all zones on specified site. There is differe
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/zones
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones
 `
 
 ### Example response
@@ -146,7 +146,7 @@ Returns json data about one or all zone on specified site. If you don't set *zon
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones/:zone_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/zones/:zone_id
 `
 
 ### Request Information
@@ -176,7 +176,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones/338c32dee6a04c468a479330ad1d7acf
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones/338c32dee6a04c468a479330ad1d7acf
 `
 
 ### Example response
@@ -226,7 +226,7 @@ Create new zone from json string for specified site. The coordinates format depe
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/zones
 `
 
 ### Request Information
@@ -270,7 +270,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones
 `
 
 ### Example Body
@@ -323,7 +323,7 @@ Edit existing zone.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones/:zone_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/zones/:zone_id
 `
 
 ### Request Information
@@ -368,7 +368,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones/0de21f52892641c9b3021ff88f304fb8
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones/0de21f52892641c9b3021ff88f304fb8
 `
 
 ### Example Body
@@ -413,7 +413,7 @@ Deletes existing zone.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones/:zone_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/zones/:zone_id
 `
 
 ### Request Information
@@ -442,7 +442,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones/0de21f52892641c9b3021ff88f304fb8
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/zones/0de21f52892641c9b3021ff88f304fb8
 `
 
 ### Example response

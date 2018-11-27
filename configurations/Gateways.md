@@ -18,7 +18,7 @@ Returns json array with data about all gateways on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways
 `
 
 ### Request Information
@@ -47,7 +47,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways
 `
 
 ### Example response
@@ -100,7 +100,7 @@ Returns json data about one or all gateways on specified site. If you don't set 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways/:gateway_id
 `
 
 ### Request Information
@@ -130,7 +130,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f
 `
 
 ### Example response
@@ -172,7 +172,7 @@ Creates new gateway from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways
 `
 
 ### Request Information
@@ -211,7 +211,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways
 `
 
 ### Example Body
@@ -252,7 +252,7 @@ Return gateway id for setted udi in request body. If gateway not found returns e
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/validate_udi
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways/validate_udi
 `
 
 ### Request Information
@@ -281,7 +281,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/validate_udi
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/validate_udi
 `
 
 ### Example Body
@@ -311,7 +311,7 @@ Edit existing gateway.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways/:gateway_id
 `
 
 ### Request Information
@@ -350,7 +350,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/aafa6bfefd674529a33eaf9da7e54c61
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/aafa6bfefd674529a33eaf9da7e54c61
 `
 
 ### Example Body
@@ -391,7 +391,7 @@ Deletes existing gateway.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways/:gateway_id
 `
 
 ### Request Information
@@ -420,7 +420,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/aafa6bfefd674529a33eaf9da7e54c61
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/aafa6bfefd674529a33eaf9da7e54c61
 `
 
 ### Example response
@@ -450,7 +450,7 @@ Ping existing gateway.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/ping
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways/:gateway_id/ping
 `
 
 ### Request Information
@@ -472,7 +472,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/c5100dc948a0451889864abb091a3313/ping
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/c5100dc948a0451889864abb091a3313/ping
 `
 
 ### Response explanation
@@ -488,7 +488,7 @@ Returns gateways statistics information.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/gateways/:gateway_id/request_stats
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/gateways/:gateway_id/request_stats
 `
 
 ### Request Information
@@ -510,7 +510,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f/request_stats
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/gateways/3a7e8b7ad1074f50a8bcf04073b4e39f/request_stats
 `
 
 ### Response explanation

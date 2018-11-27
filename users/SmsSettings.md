@@ -14,7 +14,7 @@ Resend sms with verification code for verify account phone number.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sms_settings/resend
+http://api.positron.iquipsys.net:30018/api/v1/sms_settings/resend
 `
 
 ### Request Information
@@ -39,7 +39,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sms_settings/resend
+ POST http://api.positron.iquipsys.net:30018/api/v1/sms_settings/resend
 `
 
 ### Example Body
@@ -69,7 +69,7 @@ Verify user account by verification code received from sms.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sms_settings/verify
+http://api.positron.iquipsys.net:30018/api/v1/sms_settings/verify
 `
 
 ### Request Information
@@ -94,7 +94,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sms_settings/verify
+ POST http://api.positron.iquipsys.net:30018/api/v1/sms_settings/verify
 `
 
 ### Example Body
@@ -125,7 +125,7 @@ Returns json array with data about user sms settings.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sms_settings/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/sms_settings/:user_id
 `
 
 ### Request Information
@@ -153,7 +153,7 @@ To execute this request needed system administator rules or use own user_id.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sms_settings/cd65c2023be34e84b2e9529264d17d21
+ GET http://api.positron.iquipsys.net:30018/api/v1/sms_settings/cd65c2023be34e84b2e9529264d17d21
 `
 
 ### Example response
@@ -185,7 +185,7 @@ Edit existing user sms settings.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sms_settings/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/sms_settings/:user_id
 `
 
 ### Request Information
@@ -222,7 +222,7 @@ To execute this request needed system administator rules or use own user_id.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sms_settings/cd65c2023be34e84b2e9529264d17d21
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sms_settings/cd65c2023be34e84b2e9529264d17d21
 `
 
 

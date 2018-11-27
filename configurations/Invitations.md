@@ -16,7 +16,7 @@ Returns json array with data about all invitations on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invitations
 `
 
 ### Request Information
@@ -45,7 +45,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations
 `
 
 ### Example response
@@ -98,7 +98,7 @@ Returns json data about one or all invitation on specified site. If you don't se
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations/:invitation_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invitations/:invitation_id
 `
 
 ### Request Information
@@ -128,7 +128,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/eb51e4c5e785483aac44c74bcad38174
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/eb51e4c5e785483aac44c74bcad38174
 `
 
 ### Example response
@@ -176,7 +176,7 @@ Creates new invitation from json string to specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invitations
 `
 
 ### Request Information
@@ -211,7 +211,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations
 `
 
 ### Example Body
@@ -259,7 +259,7 @@ Deletes existing invitation.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations/:invitation_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invitations/:invitation_id
 `
 
 ### Request Information
@@ -288,7 +288,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
 `
 
 ### Example response
@@ -322,7 +322,7 @@ Resend email to invited user by existing invitation.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations/:invitation_id/resend
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invitations/:invitation_id/resend
 `
 
 ### Request Information
@@ -352,7 +352,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
+POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
 `
 
 ### Example response
@@ -386,7 +386,7 @@ Accepts existing invitation by invitee user.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invitations/:invitation_id/respond
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invitations/:invitation_id/respond
 `
 
 ### Request Information
@@ -416,7 +416,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
+POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invitations/8740dc302f5b4cc7b78a05b5918c1440
 `
 
 ### Example response

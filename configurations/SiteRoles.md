@@ -14,7 +14,7 @@ Returns json array with data about all site users.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/users
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/users
 `
 
 ### Request Information
@@ -42,7 +42,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/users
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/users
 `
 
 ### Example response
@@ -107,7 +107,7 @@ Connect user with id sended in post body as user_id to demo worksite. As respons
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/demo/roles
+http://api.positron.iquipsys.net:30018/api/v1/sites/demo/roles
 `
 
 ### Request Information
@@ -136,7 +136,7 @@ To execute this request needed to be signed user.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/demo/roles
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/demo/roles
 `
 
 ### Example Body
@@ -166,7 +166,7 @@ Connect user with id sended in post body as user_id to worksite with :site_id. A
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/roles
 `
 
 ### Request Information
@@ -202,7 +202,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/roles
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/roles
 `
 
 ### Example Body
@@ -236,7 +236,7 @@ Remove user with id sended in post body as user_id from worksite with :site_id. 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/roles
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/roles
 `
 
 ### Request Information
@@ -272,7 +272,7 @@ To execute this request needed site admin or owner or higher roles.
 ### Example Request
 
 `
- DEL http://tracker.pipservices.net:8080/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/roles
+ DEL http://api.positron.iquipsys.net:30018/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/roles
 `
 
 ### Example Body

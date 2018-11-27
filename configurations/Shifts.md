@@ -15,7 +15,7 @@ Returns json array with data about all shifts on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/shifts
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts
 `
 
 ### Example response
@@ -99,7 +99,7 @@ Returns json data about one or all shifts on specified site. If you don't set *s
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/shifts/:shift_id
 `
 
 ### Request Information
@@ -128,7 +128,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/4169f50cea904a43b46db8c41f0283d9
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/4169f50cea904a43b46db8c41f0283d9
 `
 
 ### Example response
@@ -164,7 +164,7 @@ Create new shift from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/shifts
 `
 
 ### Request Information
@@ -202,7 +202,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts
 `
 
 ### Example Body
@@ -241,7 +241,7 @@ Edit existing shift.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/shifts/:shift_id
 `
 
 ### Request Information
@@ -280,7 +280,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/de9084d0994d4483a78213de0753baa4
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/de9084d0994d4483a78213de0753baa4
 `
 
 ### Example Body
@@ -317,7 +317,7 @@ Deletes existing shift.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/shifts/:shift_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/shifts/:shift_id
 `
 
 ### Request Information
@@ -346,7 +346,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/de9084d0994d4483a78213de0753baa4
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/shifts/de9084d0994d4483a78213de0753baa4
 `
 
 ### Example response

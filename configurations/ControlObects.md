@@ -15,7 +15,7 @@ Returns json array with data about all control objects on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/control_objects
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/control_objects
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects
 `
 
 ### Example response
@@ -107,7 +107,7 @@ Returns json data about one or all control object on specified site. If you don'
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/control_objects/:object_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/control_objects/:object_id
 `
 
 ### Request Information
@@ -136,7 +136,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects/a84e8721a8174e7e9b69e011dceb4ba6
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects/a84e8721a8174e7e9b69e011dceb4ba6
 `
 
 ### Example response
@@ -181,7 +181,7 @@ Create new control object from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/control_objects
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/control_objects
 `
 
 ### Request Information
@@ -221,7 +221,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects
 `
 
 ### Example Body
@@ -263,7 +263,7 @@ Edit existing control object.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/control_objects/:object_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/control_objects/:object_id
 `
 
 ### Request Information
@@ -304,7 +304,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects/668cc01908324d4597de605fb90c30d0
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects/668cc01908324d4597de605fb90c30d0
 `
 
 ### Example Body
@@ -345,7 +345,7 @@ Deletes existing control object.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/control_objects/:object_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/control_objects/:object_id
 `
 
 ### Request Information
@@ -374,7 +374,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects/668cc01908324d4597de605fb90c30d0
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/control_objects/668cc01908324d4597de605fb90c30d0
 `
 
 ### Example response

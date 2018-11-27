@@ -15,7 +15,7 @@ Returns json array with data about all event templates on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/event_templates
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/event_templates
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates
 `
 
 ### Example response
@@ -98,7 +98,7 @@ Returns json data about one or all event templates on specified site. If you don
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/event_templates/:template_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/event_templates/:template_id
 `
 
 ### Request Information
@@ -128,7 +128,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates/c363e0d0856d40a2824da555f6ce399a
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates/c363e0d0856d40a2824da555f6ce399a
 `
 
 ### Example response
@@ -168,7 +168,7 @@ Create new event template from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/event_templates
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/event_templates
 `
 
 ### Request Information
@@ -208,7 +208,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates
 `
 
 ### Example Body
@@ -251,7 +251,7 @@ Edit existing event template.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/event_templates/:template_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/event_templates/:template_id
 `
 
 ### Request Information
@@ -292,7 +292,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates/206721eb410344fa8c3126c1d8053feb
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates/206721eb410344fa8c3126c1d8053feb
 `
 
 ### Example Body
@@ -334,7 +334,7 @@ Deletes existing event template.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/event_templates/:template_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/event_templates/:template_id
 `
 
 ### Request Information
@@ -363,7 +363,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates/206721eb410344fa8c3126c1d8053feb
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/event_templates/206721eb410344fa8c3126c1d8053feb
 `
 
 ### Example response

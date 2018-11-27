@@ -15,7 +15,7 @@ Returns json array with data about all message templates.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/msg_templates
+http://api.positron.iquipsys.net:30018/api/v1/msg_templates
 `
 
 ### Request Information
@@ -37,7 +37,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/msg_templates
+ GET http://api.positron.iquipsys.net:30018/api/v1/msg_templates
 `
 
 ### Example response
@@ -133,7 +133,7 @@ Returns json data about one or all message template on specified site. If you do
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/msg_templates/:template_id
+http://api.positron.iquipsys.net:30018/api/v1/msg_templates/:template_id
 `
 
 ### Request Information
@@ -161,7 +161,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/msg_templates/589009d73d8f4ac9b496276662d7f389
+ GET http://api.positron.iquipsys.net:30018/api/v1/msg_templates/589009d73d8f4ac9b496276662d7f389
 `
 
 ### Example response
@@ -207,7 +207,7 @@ Create new message template from json string for specified site. In message temp
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/msg_templates
+http://api.positron.iquipsys.net:30018/api/v1/msg_templates
 `
 
 ### Request Information
@@ -241,7 +241,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/msg_templates
+ POST http://api.positron.iquipsys.net:30018/api/v1/msg_templates
 `
 
 ### Example Body
@@ -296,7 +296,7 @@ Edit existing message template.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/msg_templates/:template_id
+http://api.positron.iquipsys.net:30018/api/v1/msg_templates/:template_id
 `
 
 ### Request Information
@@ -336,7 +336,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/msg_templates/102f2ac4f4484ae899fabe8b439ddc5e
+PUT http://api.positron.iquipsys.net:30018/api/v1/msg_templates/102f2ac4f4484ae899fabe8b439ddc5e
 `
 
 ### Example Body
@@ -391,7 +391,7 @@ Deletes existing message template.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/msg_templates/:template_id
+http://api.positron.iquipsys.net:30018/api/v1/msg_templates/:template_id
 `
 
 ### Request Information
@@ -419,7 +419,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/msg_templates/102f2ac4f4484ae899fabe8b439ddc5e
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/msg_templates/102f2ac4f4484ae899fabe8b439ddc5e
 `
 
 ### Example response

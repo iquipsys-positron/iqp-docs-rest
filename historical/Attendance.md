@@ -15,7 +15,7 @@ Returns json data about worksite all attendances.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/attendance
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
 `
 
 ### Example response
@@ -108,7 +108,7 @@ Returns json data about worksite within time attendances.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/within_time
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/attendance/within_time
 `
 
 ### Request Information
@@ -136,7 +136,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance/within_time
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance/within_time
 `
 
 ### Example response
@@ -170,7 +170,7 @@ Create new attendance from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/attendance
 `
 
 ### Request Information
@@ -202,7 +202,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
 `
 
 ### Example Body
@@ -247,7 +247,7 @@ Batch insert for attendances from json string for specified site. Create multple
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance/batch
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/attendance/batch
 `
 
 ### Request Information
@@ -279,7 +279,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance/batch
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance/batch
 `
 
 ### Example Body
@@ -344,7 +344,7 @@ Delete all attendances on specified worksite.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/attendance
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/attendance
 `
 
 ### Request Information
@@ -372,7 +372,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/attendance
 `
 
 ### Example response

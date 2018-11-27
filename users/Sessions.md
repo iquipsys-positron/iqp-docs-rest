@@ -19,7 +19,7 @@ Sign up to system. These request used for registration new user
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/signup
+http://api.positron.iquipsys.net:30018/api/v1/signup
 `
 
 ### Request Information
@@ -34,7 +34,7 @@ http://tracker.pipservices.net:8080/api/v1/signup
 
 | Name | Required | Description | Examples |
 |------|----------|-------------|----------|
-| serverUrl | Yes | Url to server | http://tracker.pipservices.net:8080 |
+| serverUrl | Yes | Url to server | http://api.positron.iquipsys.net:30018 |
 | name | Yes | User account name | User 1 |
 | login | Yes | User account login, automaticaly equals to email | user@gmail.com |
 | email | Yes | User email | user@gmail.com |
@@ -50,14 +50,14 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/signup
+ GET http://api.positron.iquipsys.net:30018/api/v1/signup
 `
 
 ### Example Body
 
 ```
 {
-	  "serverUrl":"http://tracker.pipservices.net:8080",
+	  "serverUrl":"http://api.positron.iquipsys.net:30018",
 	  "name":"asd",
 	  "login":"asdasdasd@asdasd.com",
 	  "email":"asdasdasd@asdasd.com",
@@ -121,7 +121,7 @@ Check if selected login exists in system or no. In case of existing login reciev
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/signup/validate
+http://api.positron.iquipsys.net:30018/api/v1/signup/validate
 `
 
 ### Request Information
@@ -144,7 +144,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/signup/validate?login=unexistinguser@gmail.com
+ GET http://api.positron.iquipsys.net:30018/api/v1/signup/validate?login=unexistinguser@gmail.com
 `
 
 ### Example response
@@ -166,7 +166,7 @@ Sign in for existing user to system.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/signin
+http://api.positron.iquipsys.net:30018/api/v1/signin
 `
 
 ### Request Information
@@ -191,7 +191,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/signin
+ GET http://api.positron.iquipsys.net:30018/api/v1/signin
 `
 
 ### Example Body
@@ -315,7 +315,7 @@ Sign out for user from session.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/signout
+http://api.positron.iquipsys.net:30018/api/v1/signout
 `
 
 ### Request Information
@@ -333,7 +333,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/signout
+ GET http://api.positron.iquipsys.net:30018/api/v1/signout
 `
 
 ### Example response
@@ -355,7 +355,7 @@ Returns json array with data about all sessions.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sessions
+http://api.positron.iquipsys.net:30018/api/v1/sessions
 `
 
 ### Request Information
@@ -377,7 +377,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sessions
+ GET http://api.positron.iquipsys.net:30018/api/v1/sessions
 `
 
 ### Example response
@@ -434,7 +434,7 @@ Returns json array with data about current session.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sessions/current
+http://api.positron.iquipsys.net:30018/api/v1/sessions/current
 `
 
 ### Request Information
@@ -456,7 +456,7 @@ To execute this request needed to be signed in system.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sessions/current
+ GET http://api.positron.iquipsys.net:30018/api/v1/sessions/current
 `
 
 ### Example response
@@ -512,7 +512,7 @@ Returns json array with data about all sessions.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sessions/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/sessions/:user_id
 `
 
 ### Request Information
@@ -540,7 +540,7 @@ To execute this request needed system administrator role or use own *user_id*.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sessions/4390c2ae20a8449aac459d6f1a5ac097
+ GET http://api.positron.iquipsys.net:30018/api/v1/sessions/4390c2ae20a8449aac459d6f1a5ac097
 `
 
 ### Example response
@@ -607,7 +607,7 @@ Restore expired session by id. Sesion id can be retrieved from */sessions*.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sessions/restore
+http://api.positron.iquipsys.net:30018/api/v1/sessions/restore
 `
 
 ### Request Information
@@ -632,7 +632,7 @@ To execuce this request needed to be signed to system.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sessions/restore
+ GET http://api.positron.iquipsys.net:30018/api/v1/sessions/restore
 `
 
 ### Example Body
@@ -699,7 +699,7 @@ Delete existing session by user and session ids.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sessions/:user_id/:session_id
+http://api.positron.iquipsys.net:30018/api/v1/sessions/:user_id/:session_id
 `
 
 ### Request Information
@@ -728,7 +728,7 @@ To execute this request needed to be system administator or use own *user_id*.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sessions/4390c2ae20a8449aac459d6f1a5ac097/4fae1a74deb44ff292038600fbed0952
+ GET http://api.positron.iquipsys.net:30018/api/v1/sessions/4390c2ae20a8449aac459d6f1a5ac097/4fae1a74deb44ff292038600fbed0952
 `
 
 ### Example response

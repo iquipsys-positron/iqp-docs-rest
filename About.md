@@ -6,7 +6,7 @@ Returns json array with data about server and client.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/about
+http://api.positron.iquipsys.net:30018/api/v1/about
 `
 
 ### Request Information
@@ -23,7 +23,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/about
+ GET http://api.positron.iquipsys.net:30018/api/v1/about
 `
 
 ### Example response
@@ -31,7 +31,7 @@ Anybody can execute this request.
 ```
 {
 	"server": {
-		"name": "tracker-stage",
+		"name": "iqs-facade-node",
 		"description": "Client facade for iQuipsys Tracker (stage)",
 		"properties": {},
 		"uptime": 97169944,

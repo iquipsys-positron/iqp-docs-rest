@@ -16,7 +16,7 @@ Returns json array with data about all incidents on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/incidents
 `
 
 ### Request Information
@@ -45,7 +45,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents
 `
 
 ### Example response
@@ -114,7 +114,7 @@ Returns json data about one or all incident on specified site. If you don't set 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/incidents/:incident_id
 `
 
 ### Request Information
@@ -144,7 +144,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/7623803486e64b0a99dc8503e97a7058
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/7623803486e64b0a99dc8503e97a7058
 `
 
 ### Example response
@@ -208,7 +208,7 @@ Create new incident from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/incidents
 `
 
 ### Request Information
@@ -248,7 +248,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents
 `
 
 ### Example Body
@@ -319,7 +319,7 @@ Edit existing incident.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/incidents/:incident_id
 `
 
 ### Request Information
@@ -366,7 +366,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/2141085d65e94c3b83cf240dfdd4b40f
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/2141085d65e94c3b83cf240dfdd4b40f
 `
 
 ### Example Body
@@ -421,7 +421,7 @@ Deletes existing incident.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/incidents/:incident_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/incidents/:incident_id
 `
 
 ### Request Information
@@ -450,7 +450,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/2141085d65e94c3b83cf240dfdd4b40f
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/incidents/2141085d65e94c3b83cf240dfdd4b40f
 `
 
 ### Example response

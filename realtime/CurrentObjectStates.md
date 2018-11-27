@@ -15,7 +15,7 @@ Returns json data about worksite all current object states.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/curr_object_states
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states
 `
 
 ### Example response
@@ -140,7 +140,7 @@ Returns json data about one or all current object state on specified site. If yo
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states/:state_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/curr_object_states/:state_id
 `
 
 ### Request Information
@@ -170,7 +170,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states/a889326f2b6b48bbbea388dfdeb7245b
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states/a889326f2b6b48bbbea388dfdeb7245b
 `
 
 ### Example response
@@ -261,7 +261,7 @@ Edit existing current object state. As a result returns all current object state
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/zones/:zone_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/zones/:zone_id
 `
 
 ### Request Information
@@ -316,7 +316,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states/ff65253d71fc4e278d9e89013095c927
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states/ff65253d71fc4e278d9e89013095c927
 `
 
 ### Example Body
@@ -394,7 +394,7 @@ Delete all existing current object state by state id. As result return all delet
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/curr_object_states
 `
 
 ### Request Information
@@ -422,7 +422,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states
 `
 
 ### Example response
@@ -492,7 +492,7 @@ Delete existing current object state by state id.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/curr_object_states/:state_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/curr_object_states/:state_id
 `
 
 ### Request Information
@@ -521,7 +521,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states/ff65253d71fc4e278d9e89013095c927
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/curr_object_states/ff65253d71fc4e278d9e89013095c927
 `
 
 ### Example response

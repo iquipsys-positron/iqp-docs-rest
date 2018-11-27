@@ -5,7 +5,7 @@ Update device status by rest gateway
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/gateways/update_status
+http://api.positron.iquipsys.net:30018/api/v1/gateways/update_status
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed system administator roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/gateways/update_status
+ POST http://api.positron.iquipsys.net:30018/api/v1/gateways/update_status
 `
 
 ### Example Body

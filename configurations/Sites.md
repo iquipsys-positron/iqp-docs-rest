@@ -18,7 +18,7 @@ Returns json array with data about existing sites
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites
+http://api.positron.iquipsys.net:30018/api/v1/sites
 `
 
 ### Request Information
@@ -40,7 +40,7 @@ To execute this request needed to be signed user.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites
 `
 
 ### Example response
@@ -130,7 +130,7 @@ Returns json array with data about all existing sites. Allowed only for system a
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/all
+http://api.positron.iquipsys.net:30018/api/v1/sites/all
 `
 
 ### Request Information
@@ -152,7 +152,7 @@ To execute this request needed system administator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/all
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/all
 `
 
 ### Example response
@@ -242,7 +242,7 @@ Returns json data about one or all site on specified site. If you don't set *sit
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id
 `
 
 ### Request Information
@@ -271,7 +271,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba
 `
 
 ### Example response
@@ -349,7 +349,7 @@ Generate new unique identify code for site. As respond returns new generated cod
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/generate_code
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/generate_code
 `
 
 ### Request Information
@@ -378,7 +378,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
-POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/generate_code
+POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/generate_code
 `
 
 ### Example response
@@ -396,7 +396,7 @@ Create new site from json data.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites
+http://api.positron.iquipsys.net:30018/api/v1/sites
 `
 
 ### Request Information
@@ -435,7 +435,7 @@ To execute this request needed to be signed user.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites
 `
 
 ### Example Body
@@ -491,7 +491,7 @@ Using this request you can find existing site by code. If site exists request re
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/validate_code
+http://api.positron.iquipsys.net:30018/api/v1/sites/validate_code
 `
 
 ### Request Information
@@ -520,7 +520,7 @@ To execute this request needed to be signed user.
 ### Example Request
 
 `
-POST http://tracker.pipservices.net:8080/api/v1/sites/validate_code
+POST http://api.positron.iquipsys.net:30018/api/v1/sites/validate_code
 `
 
 ### Example Body
@@ -551,7 +551,7 @@ Edit info about existing site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id
 `
 
 ### Request Information
@@ -596,7 +596,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/1c1bf27822cc41e688575595f747fb0e
 `
 
 ### Example Body
@@ -648,7 +648,7 @@ Delete existing site from system.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id
 `
 
 ### Request Information
@@ -676,7 +676,7 @@ To execute this request needed system administator role.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/1c1bf27822cc41e688575595f747fb0e
 `
 
 ### Example response
@@ -719,7 +719,7 @@ Remove signed user from setted site. Returns nothing, and disconnects user from 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/remove
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/remove
 `
 
 ### Request Information
@@ -747,7 +747,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/remove
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9e55c43454ad4c6f99cb20e06aac3b95/remove
 `
 
 ### Example response

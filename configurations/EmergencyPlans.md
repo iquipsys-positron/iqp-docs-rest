@@ -15,7 +15,7 @@ Returns json array with data about all emergecy plans on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/emergency_plans
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans
 `
 
 ### Example response
@@ -130,7 +130,7 @@ Returns json data about one or all emergecy plan on specified site. If you don't
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/emergency_plans/:plan_id
 `
 
 ### Request Information
@@ -159,7 +159,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/1026847f61a342cc9068e96ed9c1ea72
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/1026847f61a342cc9068e96ed9c1ea72
 `
 
 ### Example response
@@ -213,7 +213,7 @@ Create new emergecy plan from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/emergency_plans
 `
 
 ### Request Information
@@ -259,7 +259,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans
 `
 
 ### Example Body
@@ -370,7 +370,7 @@ Edit existing emergecy plan.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/emergency_plans/:plan_id
 `
 
 ### Request Information
@@ -417,7 +417,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/df9cb21c557d4420a7c11d2b91eb070a
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/df9cb21c557d4420a7c11d2b91eb070a
 `
 
 ### Example Body
@@ -517,7 +517,7 @@ Deletes existing emergecy plan.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/emergency_plans/:plan_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/emergency_plans/:plan_id
 `
 
 ### Request Information
@@ -546,7 +546,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/df9cb21c557d4420a7c11d2b91eb070a
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/emergency_plans/df9cb21c557d4420a7c11d2b91eb070a
 `
 
 ### Example response

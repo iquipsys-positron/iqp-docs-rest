@@ -15,7 +15,7 @@ Returns json array with data about all locations on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/locations
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/locations
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations
 `
 
 ### Example response
@@ -98,7 +98,7 @@ Returns json data about one or all location on specified site. If you don't set 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/locations/:location_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/locations/:location_id
 `
 
 ### Request Information
@@ -127,7 +127,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations/1af7eb3146074daf8de07681a424104b
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations/1af7eb3146074daf8de07681a424104b
 `
 
 ### Example response
@@ -166,7 +166,7 @@ Create new location from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/locations
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/locations
 `
 
 ### Request Information
@@ -197,7 +197,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations
 `
 
 ### Example Body
@@ -244,7 +244,7 @@ Edit existing location.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/locations/:location_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/locations/:location_id
 `
 
 ### Request Information
@@ -282,7 +282,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations/f4763cb96d214254ada7d7e0f53940be
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations/f4763cb96d214254ada7d7e0f53940be
 `
 
 ### Example Body
@@ -328,7 +328,7 @@ Deletes existing location.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/locations/:location_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/locations/:location_id
 `
 
 ### Request Information
@@ -357,7 +357,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations/f4763cb96d214254ada7d7e0f53940be
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/locations/f4763cb96d214254ada7d7e0f53940be
 `
 
 ### Example response

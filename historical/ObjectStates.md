@@ -15,7 +15,7 @@ Returns json data about worksite all object states.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_states
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
 `
 
 ### Example response
@@ -137,7 +137,7 @@ Returns json data about worksite object states for current timeline. Current tim
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_states
 `
 
 ### Request Information
@@ -166,7 +166,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
 `
 
 ### Example response
@@ -268,7 +268,7 @@ Create new object state from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_states
 `
 
 ### Request Information
@@ -316,7 +316,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
 `
 
 ### Example Body
@@ -372,7 +372,7 @@ Batch insert for object states from json string for specified site. Create multp
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_states/batch
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_states/batch
 `
 
 ### Request Information
@@ -421,7 +421,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states/batch
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states/batch
 `
 
 ### Example Body
@@ -512,7 +512,7 @@ Delete all object states on specified worksite.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_states
 `
 
 ### Request Information
@@ -540,7 +540,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_states
 `
 
 ### Example response

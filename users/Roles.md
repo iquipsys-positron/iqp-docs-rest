@@ -13,7 +13,7 @@ Returns json data about all user roles.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/roles/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/roles/:user_id
 `
 
 ### Request Information
@@ -41,7 +41,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/roles/5ad48b88358d48fc9c84e90498748a8f
+ GET http://api.positron.iquipsys.net:30018/api/v1/roles/5ad48b88358d48fc9c84e90498748a8f
 `
 
 ### Example response
@@ -81,7 +81,7 @@ Grant roles for user. Can be sended multiple roles at ones in string array.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/roles/:user_id/grant
+http://api.positron.iquipsys.net:30018/api/v1/roles/:user_id/grant
 `
 
 ### Request Information
@@ -110,7 +110,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/roles/0984f44cbc6648b0b23d955f9d964c2f/grant
+ POST http://api.positron.iquipsys.net:30018/api/v1/roles/0984f44cbc6648b0b23d955f9d964c2f/grant
 `
 
 ### Example body
@@ -143,7 +143,7 @@ Revoke roles for user. Can be revoked multiple roles at ones in string array.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/roles/:user_id/revoke
+http://api.positron.iquipsys.net:30018/api/v1/roles/:user_id/revoke
 `
 
 ### Request Information
@@ -172,7 +172,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/roles/0984f44cbc6648b0b23d955f9d964c2f/revoke
+ POST http://api.positron.iquipsys.net:30018/api/v1/roles/0984f44cbc6648b0b23d955f9d964c2f/revoke
 `
 
 ### Example body

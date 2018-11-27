@@ -24,7 +24,7 @@ Returns json data about all counters. Counters used as parameters to get statist
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/statistics/counters
+http://api.positron.iquipsys.net:30018/api/v1/statistics/counters
 `
 
 ### Request Information
@@ -52,7 +52,7 @@ To execute this request needed system administator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/statistics/counters
+ GET http://api.positron.iquipsys.net:30018/api/v1/statistics/counters
 `
 
 ### Example response
@@ -111,7 +111,7 @@ Returns json data about all groups. Groups used to specify worksite for receivin
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/statistics/groups
+http://api.positron.iquipsys.net:30018/api/v1/statistics/groups
 `
 
 ### Request Information
@@ -133,7 +133,7 @@ To execute this request needed system administator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/statistics/groups
+ GET http://api.positron.iquipsys.net:30018/api/v1/statistics/groups
 `
 
 ### Example response
@@ -172,7 +172,7 @@ Returns json data with all statistics values.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/statistics
+http://api.positron.iquipsys.net:30018/api/v1/statistics
 `
 
 ### Request Information
@@ -201,7 +201,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/statistics
+ GET http://api.positron.iquipsys.net:30018/api/v1/statistics
 `
 
 ### Example response
@@ -245,7 +245,7 @@ Returns json data about worksite all statistics. The statistic store values for 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/statistics/:group
+http://api.positron.iquipsys.net:30018/api/v1/statistics/:group
 `
 
 ### Request Information
@@ -273,7 +273,7 @@ To execute this request needed system administrator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/statistics/9cfaf79bc95b4a9e912314eb3db7a4ba
+ GET http://api.positron.iquipsys.net:30018/api/v1/statistics/9cfaf79bc95b4a9e912314eb3db7a4ba
 `
 
 ### Example response
@@ -338,7 +338,7 @@ The result values for distance return in meters, for presence and imobile in sec
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/statistics/:group/:name
+http://api.positron.iquipsys.net:30018/api/v1/statistics/:group/:name
 `
 
 ### Request Information
@@ -367,7 +367,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 ```
- GET http://tracker.pipservices.net:8080/api/v1/statistics/9cfaf79bc95b4a9e912314eb3db7a4ba/params.all.distance?from_time=2017-11-22T22:00:00.000Z&timezone=Asia%2FBeirut&to_time=2017-11-23T21:59:00.000Z&type=4
+ GET http://api.positron.iquipsys.net:30018/api/v1/statistics/9cfaf79bc95b4a9e912314eb3db7a4ba/params.all.distance?from_time=2017-11-22T22:00:00.000Z&timezone=Asia%2FBeirut&to_time=2017-11-23T21:59:00.000Z&type=4
 ```
 
 ### Example response
@@ -437,7 +437,7 @@ Increments value for existing counter and creates new values for unexisting coun
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/statistics/:group/:name
+http://api.positron.iquipsys.net:30018/api/v1/statistics/:group/:name
 `
 
 ### Request Information
@@ -473,7 +473,7 @@ To execute this request needed site admin or higher roles.
 
 ### Example Request
 ```
- POST http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e/statistics/params.all.distance
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/1c1bf27822cc41e688575595f747fb0e/statistics/params.all.distance
 ```
 
 ### Example response
@@ -495,7 +495,7 @@ Returns json data about worksite all statistics. The statistic store values for 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics
+http://api.positron.iquipsys.net:30018/api/v1/sites/:group/statistics
 `
 
 ### Request Information
@@ -523,7 +523,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/statistics
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/statistics
 `
 
 ### Example response
@@ -588,7 +588,7 @@ The result values for distance return in meters, for presence and imobile in sec
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics/:name
+http://api.positron.iquipsys.net:30018/api/v1/sites/:group/statistics/:name
 `
 
 ### Request Information
@@ -617,7 +617,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 ```
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/statistics/params.all.distance?from_time=2017-11-22T22:00:00.000Z&timezone=Asia%2FBeirut&to_time=2017-11-23T21:59:00.000Z&type=4
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/statistics/params.all.distance?from_time=2017-11-22T22:00:00.000Z&timezone=Asia%2FBeirut&to_time=2017-11-23T21:59:00.000Z&type=4
 ```
 
 ### Example response
@@ -687,7 +687,7 @@ Increments value for existing counters and creates new values for unexisting cou
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:group/statistics/:name
+http://api.positron.iquipsys.net:30018/api/v1/sites/:group/statistics/:name
 `
 
 ### Request Information
@@ -723,7 +723,7 @@ To execute this request needed site admin or higher roles.
 
 ### Example Request
 ```
- POST http://tracker.pipservices.net:8080/api/v1/sites/1c1bf27822cc41e688575595f747fb0e/statistics/params.all.distance
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/1c1bf27822cc41e688575595f747fb0e/statistics/params.all.distance
 ```
 
 ### Example response

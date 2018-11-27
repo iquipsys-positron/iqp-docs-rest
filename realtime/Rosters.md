@@ -15,7 +15,7 @@ Returns json array with data about all rosters on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rosters
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters
 `
 
 ### Example response
@@ -115,7 +115,7 @@ Returns json data about one or all roster on specified site. If you don't set *r
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rosters/:roster_id
 `
 
 ### Request Information
@@ -145,7 +145,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/6a613241f5a243a588346d1fc0459a41
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/6a613241f5a243a588346d1fc0459a41
 `
 
 ### Example response
@@ -192,7 +192,7 @@ Creates new roster from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rosters
 `
 
 ### Request Information
@@ -226,7 +226,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters
 `
 
 ### Example Body
@@ -283,7 +283,7 @@ Edit existing roster.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rosters/:roster_id
 `
 
 ### Request Information
@@ -324,7 +324,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/9f8e68b74cc84afd8ff1cd2c70187de8
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/9f8e68b74cc84afd8ff1cd2c70187de8
 `
 
 ### Example Body
@@ -370,7 +370,7 @@ Deletes existing roster.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rosters/:roster_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rosters/:roster_id
 `
 
 ### Request Information
@@ -399,7 +399,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/9f8e68b74cc84afd8ff1cd2c70187de8
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rosters/9f8e68b74cc84afd8ff1cd2c70187de8
 `
 
 ### Example response

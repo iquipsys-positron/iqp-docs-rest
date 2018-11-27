@@ -17,7 +17,7 @@ Returns json array with data about all devices on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices
 `
 
 ### Request Information
@@ -46,7 +46,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices
 `
 
 ### Example response
@@ -103,7 +103,7 @@ Returns json data about one or all devices on specified site. If you don't set *
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices/:device_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices/:device_id
 `
 
 ### Request Information
@@ -132,7 +132,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/8477b12c42a64707b5b0cc19885a00e5
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/8477b12c42a64707b5b0cc19885a00e5
 `
 
 ### Example response
@@ -174,7 +174,7 @@ Create new device from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices
 `
 
 ### Request Information
@@ -213,7 +213,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices
 `
 
 ### Example Body
@@ -257,7 +257,7 @@ Return device id for setted udi in request body. If device not found returns emp
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices/validate_udi
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices/validate_udi
 `
 
 ### Request Information
@@ -286,7 +286,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/validate_udi
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/validate_udi
 `
 
 ### Example Body
@@ -316,7 +316,7 @@ Edit existing device.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices/:device_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices/:device_id
 `
 
 ### Request Information
@@ -356,7 +356,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/4f5378e1a033461bae6b51cb34538d92
+ PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/4f5378e1a033461bae6b51cb34538d92
 `
 
 ### Example Body
@@ -397,7 +397,7 @@ Deletes existing device.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices/:device_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices/:device_id
 `
 
 ### Request Information
@@ -426,7 +426,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/4f5378e1a033461bae6b51cb34538d92
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/4f5378e1a033461bae6b51cb34538d92
 `
 
 ### Example response
@@ -458,7 +458,7 @@ Ping existing device.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/devices/:device_id/ping
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/devices/:device_id/ping
 `
 
 ### Request Information
@@ -480,7 +480,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/6f5d31e2fcda4385a724cf34b7584437/ping
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/devices/6f5d31e2fcda4385a724cf34b7584437/ping
 `
 
 ### Response explanation

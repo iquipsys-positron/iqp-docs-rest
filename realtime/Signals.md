@@ -14,7 +14,7 @@ Returns json array with data about all signals on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/signals
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/signals
 `
 
 ### Request Information
@@ -43,7 +43,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals
 `
 
 ### Example response
@@ -88,7 +88,7 @@ Creates new signal from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/signals
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/signals
 `
 
 ### Request Information
@@ -122,7 +122,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals
 `
 
 ### Example Body
@@ -165,7 +165,7 @@ Lock existing signal.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/signals/:signal_id/lock
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/signals/:signal_id/lock
 `
 
 ### Request Information
@@ -195,7 +195,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals/566fd1b6ec9d41ce9cb4966e3b64c5ff/lock
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals/566fd1b6ec9d41ce9cb4966e3b64c5ff/lock
 
 `
 
@@ -218,7 +218,7 @@ Close existing signal.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/signals/:signal_id/close
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/signals/:signal_id/close
 `
 
 ### Request Information
@@ -248,7 +248,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals/566fd1b6ec9d41ce9cb4966e3b64c5ff/close
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals/566fd1b6ec9d41ce9cb4966e3b64c5ff/close
 
 `
 
@@ -271,7 +271,7 @@ Deletes existing signal.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/signals/:signal_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/signals/:signal_id
 `
 
 ### Request Information
@@ -300,7 +300,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals/566fd1b6ec9d41ce9cb4966e3b64c5ff
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/signals/566fd1b6ec9d41ce9cb4966e3b64c5ff
 `
 
 ### Example response

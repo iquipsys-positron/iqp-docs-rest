@@ -13,7 +13,7 @@ Returns json data about all worksite operational events.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/operational_events
 `
 
 ### Request Information
@@ -41,7 +41,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events
 `
 
 ### Example response
@@ -134,7 +134,7 @@ Create new operational event from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/operational_events
 `
 
 ### Request Information
@@ -176,7 +176,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events
 `
 
 ### Example Body
@@ -248,7 +248,7 @@ Delete all existing current operational event by state id. As result return all 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/operational_events/:event_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/operational_events/:event_id
 `
 
 ### Request Information
@@ -277,7 +277,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events/5b99a941c17e4b63acda0bb083a4ad09
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/operational_events/5b99a941c17e4b63acda0bb083a4ad09
 `
 
 ### Example response

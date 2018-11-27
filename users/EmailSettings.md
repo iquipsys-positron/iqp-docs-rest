@@ -14,7 +14,7 @@ Resend email with verification code for verify account email.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/resend
+http://api.positron.iquipsys.net:30018/api/v1/email_settings/resend
 `
 
 ### Request Information
@@ -39,7 +39,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/email_settings/resend
+ GET http://api.positron.iquipsys.net:30018/api/v1/email_settings/resend
 `
 
 ### Example Body
@@ -69,7 +69,7 @@ Verify user account by verification code received on email.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/verify
+http://api.positron.iquipsys.net:30018/api/v1/email_settings/verify
 `
 
 ### Request Information
@@ -94,7 +94,7 @@ Anybody can execute this request.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/email_settings/verify
+ GET http://api.positron.iquipsys.net:30018/api/v1/email_settings/verify
 `
 
 ### Example Body
@@ -125,7 +125,7 @@ Returns json array with data about user email settings.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/email_settings/:user_id
 `
 
 ### Request Information
@@ -153,7 +153,7 @@ To execute this request needed system administator rules or use own user_id.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/email_settings/cd65c2023be34e84b2e9529264d17d21
+ GET http://api.positron.iquipsys.net:30018/api/v1/email_settings/cd65c2023be34e84b2e9529264d17d21
 `
 
 ### Example response
@@ -189,7 +189,7 @@ Edit existing user email settings.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/email_settings/:user_id
+http://api.positron.iquipsys.net:30018/api/v1/email_settings/:user_id
 `
 
 ### Request Information
@@ -229,7 +229,7 @@ To execute this request needed system administator rules or use own user_id.
 ### Example Request
 
 `
- PUT http://tracker.pipservices.net:8080/api/v1/email_settings/cd65c2023be34e84b2e9529264d17d21
+ PUT http://api.positron.iquipsys.net:30018/api/v1/email_settings/cd65c2023be34e84b2e9529264d17d21
 `
 
 

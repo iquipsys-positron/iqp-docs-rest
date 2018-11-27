@@ -12,7 +12,7 @@ Initiate update of the current state, calculates all rules, generates events and
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/begin_update_state
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/begin_update_state
 `
 
 ### Request Information
@@ -47,7 +47,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/begin_update_state
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/begin_update_state
 `
 
 ### Example Body
@@ -77,7 +77,7 @@ Invalidate device state on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/invalidate_states
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/invalidate_states
 `
 
 ### Request Information
@@ -112,7 +112,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invalidate_states
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/invalidate_states
 `
 
 ### Example Body

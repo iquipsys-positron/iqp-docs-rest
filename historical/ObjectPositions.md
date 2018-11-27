@@ -16,7 +16,7 @@ Returns json data about worksite all object positions.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_positions
 `
 
 ### Request Information
@@ -44,7 +44,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
 `
 
 ### Example response
@@ -112,7 +112,7 @@ Returns count of all object_positions on worksite.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/count
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_positions/count
 `
 
 ### Request Information
@@ -140,7 +140,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/count
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/count
 `
 
 ### Example response
@@ -162,7 +162,7 @@ Returns count of  object positions in time interval for selected objects.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/count
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_positions/count
 `
 
 ### Request Information
@@ -198,7 +198,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/count?from_time=2017-11-27T11:56:00.000Z&object_ids=841abccea54d47bd87b04195764a859b,2ff6d17cec174c0eafc81d6cdad95630&to_time=2017-11-27T12:12:00.000Z
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/count?from_time=2017-11-27T11:56:00.000Z&object_ids=841abccea54d47bd87b04195764a859b,2ff6d17cec174c0eafc81d6cdad95630&to_time=2017-11-27T12:12:00.000Z
 `
 
 ### Example response
@@ -220,7 +220,7 @@ Create new object position from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_positions
 `
 
 ### Request Information
@@ -254,7 +254,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
 `
 
 ### Example Body
@@ -307,7 +307,7 @@ Batch insert for object positions from json string for specified site. Create mu
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions/batch
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_positions/batch
 `
 
 ### Request Information
@@ -341,7 +341,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/batch
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions/batch
 `
 
 ### Example Body
@@ -419,7 +419,7 @@ Delete all object positions on specified worksite.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/object_positions
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/object_positions
 `
 
 ### Request Information
@@ -447,7 +447,7 @@ To execute this request needed site admin or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/object_positions
 `
 
 ### Example response

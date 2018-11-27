@@ -16,7 +16,7 @@ Returns json array with data about all rules on specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rules
 `
 
 ### Request Information
@@ -45,7 +45,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules
 `
 
 ### Example response
@@ -146,7 +146,7 @@ Returns json data about one or all rule on specified site. If you don't set *rul
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rules/:rule_id
 `
 
 ### Request Information
@@ -176,7 +176,7 @@ To execute this request needed site user or higher roles.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/5ad48b88358d48fc9c84e90498748a8f
+ GET http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/5ad48b88358d48fc9c84e90498748a8f
 `
 
 ### Example response
@@ -244,7 +244,7 @@ Create new rule from json string for specified site.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rules
 `
 
 ### Request Information
@@ -288,7 +288,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- POST http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules
+ POST http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules
 `
 
 ### Example Body
@@ -356,7 +356,7 @@ Edit existing rule.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rules/:rule_id
 `
 
 ### Request Information
@@ -407,7 +407,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
-PUT http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/3b2700490f39472dbc9cdb647936de11
+PUT http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/3b2700490f39472dbc9cdb647936de11
 `
 
 ### Example Body
@@ -462,7 +462,7 @@ Deletes existing rule.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/sites/:site_id/rules/:rule_id
+http://api.positron.iquipsys.net:30018/api/v1/sites/:site_id/rules/:rule_id
 `
 
 ### Request Information
@@ -491,7 +491,7 @@ To execute this request needed site manager or higher roles.
 ### Example Request
 
 `
- DELETE http://tracker.pipservices.net:8080/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/3b2700490f39472dbc9cdb647936de11
+ DELETE http://api.positron.iquipsys.net:30018/api/v1/sites/9cfaf79bc95b4a9e912314eb3db7a4ba/rules/3b2700490f39472dbc9cdb647936de11
 `
 
 ### Example response

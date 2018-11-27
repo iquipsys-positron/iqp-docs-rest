@@ -13,7 +13,7 @@ Returns json array with data about all activities. Activities includes all user 
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/activities
+http://api.positron.iquipsys.net:30018/api/v1/activities
 `
 
 ### Request Information
@@ -35,7 +35,7 @@ To execute this request needed system administator rules.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/activities
+ GET http://api.positron.iquipsys.net:30018/api/v1/activities
 `
 
 ### Example response
@@ -113,7 +113,7 @@ Returns json array with data about account activity.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/activities/:party_id
+http://api.positron.iquipsys.net:30018/api/v1/activities/:party_id
 `
 
 ### Request Information
@@ -141,7 +141,7 @@ To execute this request needed system administrator role or use own *party_id*.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/activities/662635fab7dc4e1c8d888e9d300e9b3a
+ GET http://api.positron.iquipsys.net:30018/api/v1/activities/662635fab7dc4e1c8d888e9d300e9b3a
 `
 
 ### Example response
@@ -208,7 +208,7 @@ Create new activity from json data.
 ### Request URL
 
 `
-http://tracker.pipservices.net:8080/api/v1/activities
+http://api.positron.iquipsys.net:30018/api/v1/activities
 `
 
 ### Request Information
@@ -241,7 +241,7 @@ To execuce this request needed to have system administator role.
 ### Example Request
 
 `
- GET http://tracker.pipservices.net:8080/api/v1/activities
+ GET http://api.positron.iquipsys.net:30018/api/v1/activities
 `
 
 ### Example Body
